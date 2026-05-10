@@ -7,32 +7,32 @@
 **Type:** Python script, no agent needed
 **Depends on:** nothing
 
-- [ ] Query OpenRouter /v1/providers catalog
-- [ ] Query Together AI model list via their API
-- [ ] Query Fireworks AI model list via their API
-- [ ] Query Groq model list via their API
-- [ ] Parse current seed.sql to extract known providers + models
-- [ ] Diff engine: new providers, new models, pricing deltas >10%, deprecated models
-- [ ] Write structured diff report to `.swarm/reports/scout-report.json`
-- [ ] CLI: `python3 scripts/scout.py` → writes report, exits 0 if no changes, 1 if changes found
+- [x] Query OpenRouter /v1/providers catalog
+- [x] Query Together AI model list via their API
+- [x] Query Fireworks AI model list via their API
+- [x] Query Groq model list via their API
+- [x] Parse current seed.sql to extract known providers + models
+- [x] Diff engine: new providers, new models, pricing deltas >10%, deprecated models
+- [x] Write structured diff report to `.swarm/reports/scout-report.json`
+- [x] CLI: `python3 scripts/scout.py` → writes report, exits 0 if no changes, 1 if changes found
 
 ### P1.2 Gap Monitor script
 **File:** `scripts/gap-monitor.py`
 **Type:** Python script, no agent needed
 **Depends on:** P1.1 (for consistent report format)
 
-- [ ] Read export/*.json files
-- [ ] Check: providers with zero pricing records → flag
-- [ ] Check: models with no capabilities → flag
-- [ ] Check: models past sunset_date still marked active → flag
-- [ ] Check: endpoints with no model_endpoint_map entries → flag
-- [ ] Check: providers with zero models → flag
-- [ ] Write gap report to `.swarm/reports/gap-report.json`
-- [ ] CLI: `python3 scripts/gap-monitor.py` → writes report, exits 0 if no gaps, 1 if gaps found
+- [x] Read export/*.json files
+- [x] Check: providers with zero pricing records → flag
+- [x] Check: models with no capabilities → flag
+- [x] Check: models past sunset_date still marked active → flag
+- [x] Check: endpoints with no model_endpoint_map entries → flag
+- [x] Check: providers with zero models → flag
+- [x] Write gap report to `.swarm/reports/gap-report.json`
+- [x] CLI: `python3 scripts/gap-monitor.py` → writes report, exits 0 if no gaps, 1 if gaps found
 
 ### P1.3 `.swarm/reports/` directory
-- [ ] Create `.swarm/reports/` directory
-- [ ] Add `.gitignore` entry to keep reports local (not committed)
+- [x] Create `.swarm/reports/` directory
+- [x] Add `.gitignore` entry to keep reports local (not committed)
 
 ---
 
