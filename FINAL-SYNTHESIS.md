@@ -32,7 +32,7 @@ CREATE TYPE plan_tier AS ENUM (
 );
 
 CREATE TYPE billing_model AS ENUM (
-    'per_token', 'subscription', 'token_plan', 'hybrid'
+    'per_token', 'subscription', 'token_plan', 'hybrid', 'custom'
 );
 
 CREATE TYPE model_status AS ENUM ('active', 'beta', 'deprecated', 'sunset');
@@ -50,7 +50,7 @@ CREATE TYPE endpoint_type AS ENUM ('standard', 'batch', 'streaming');
 CREATE TYPE protocol_type AS ENUM ('https', 'websocket', 'grpc');
 
 CREATE TYPE endpoint_auth_method AS ENUM (
-    'bearer_token', 'api_key_header', 'api_key_query', 'oauth', 'custom'
+    'bearer_token', 'api_key', 'api_key_header', 'api_key_query', 'oauth', 'custom'
 );
 
 CREATE TYPE endpoint_status AS ENUM ('active', 'deprecated', 'sunset');
@@ -111,8 +111,8 @@ CREATE TABLE models (
     display_name            VARCHAR(256) NOT NULL,
     model_family            VARCHAR(128),
     version_label           VARCHAR(64),
-    context_window_tokens   INTEGER NOT NULL,
-    max_output_tokens       INTEGER NOT NULL,
+    context_window_tokens   INTEGER,
+    max_output_tokens       INTEGER,
     max_batch_output_tokens INTEGER,
     training_cutoff_date    DATE,
     status                  model_status NOT NULL DEFAULT 'active',
@@ -731,7 +731,7 @@ INSERT INTO model_capabilities (model_id, capability, supported, notes)
 SELECT m.id, 'json_mode', TRUE, 'JSON output in both thinking and non-thinking modes'
 FROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro');
 
-INSERT INTO model_capabilities (model_id, capability, supported, FALSE, notes)
+INSERT INTO model_capabilities (model_id, capability, supported, notes)
 SELECT m.id, 'vision', FALSE, 'Text-only models currently'
 FROM models m WHERE m.provider_id = 'deepseek';
 ```
@@ -1331,13 +1331,10 @@ The JSON schema mirrors the SQL schema directly — each table becomes an array 
 ### Export Generation Command
 
 ```bash
-# From the populated PostgreSQL database:
-mkdir -p /home/work/hermesfixes/deerflow-modeldb/export
-
-for table in providers provider_plans models model_capabilities model_pricing endpoints model_endpoint_map model_aliases; do
-  psql -d deerflow_modeldb -c "COPY (SELECT row_to_json(t) FROM $table t) TO '/home/work/hermesfixes/deerflow-modeldb/export/$table.json'";
-done
+python3 generate-exports.py
 ```
+
+The generator writes `schema.sql`, `seed.sql`, and all `export/*.json` files from this synthesis using an isolated temporary PostgreSQL database.
 
 ---
 

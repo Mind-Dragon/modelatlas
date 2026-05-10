@@ -2,11 +2,10 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Compatible-336791.svg?logo=postgresql)](https://www.postgresql.org/)
-[![CI](https://github.com/Mind-Dragon/modelatlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mind-Dragon/modelatlas/actions/workflows/ci.yml)
 [![Providers](https://img.shields.io/badge/Providers-25-green.svg)]()
-[![Models](https://img.shields.io/badge/Models-80%2B-orange.svg)]()
-[![Plans](https://img.shields.io/badge/Plans-120%2B-yellow.svg)]()
-[![Endpoints](https://img.shields.io/badge/Endpoints-35%2B-blue.svg)]()
+[![Models](https://img.shields.io/badge/Models-124-orange.svg)]()
+[![Plans](https://img.shields.io/badge/Plans-115-yellow.svg)]()
+[![Endpoints](https://img.shields.io/badge/Endpoints-29-blue.svg)]()
 
 The most comprehensive open database of AI language models, provider pricing plans, rate limits, API endpoints, and model capabilities — normalized into a PostgreSQL schema with full seed data and JSON exports.
 
@@ -28,7 +27,7 @@ Each provider is cataloged across **8 normalized dimensions**: plans, models, pr
 ```
 ┌─────────────┐       ┌──────────────────┐       ┌─────────────────┐
 │  providers  │──────▶│ provider_plans   │       │    models       │
-│  (25 rows)  │       │  (120+ rows)     │       │   (80+ rows)    │
+│  (25 rows)  │       │  (115 rows)      │       │   (124 rows)   │
 └─────────────┘       └──────────────────┘       └────────┬────────┘
                                                           │
                                                           ▼
@@ -40,7 +39,7 @@ Each provider is cataloged across **8 normalized dimensions**: plans, models, pr
          ▼
 ┌──────────────────┐       ┌──────────────────┐       ┌─────────────────┐
 │  endpoints       │       │  model_aliases   │       │  (future)       │
-│  (35+ rows)      │       │  (version map)   │       │  rate_limits    │
+│  (29 rows)       │       │  (11 rows)       │       │  rate_limits    │
 └──────────────────┘       └──────────────────┘       └─────────────────┘
 ```
 
@@ -49,33 +48,30 @@ Each provider is cataloged across **8 normalized dimensions**: plans, models, pr
 | Table | Rows | Description |
 |-------|------|-------------|
 | [`providers`](export/providers.json) | 25 | AI labs, aggregators, cloud platforms with metadata |
-| [`provider_plans`](export/provider_plans.json) | 120+ | Free / Pro / Team / Enterprise / Token-plan / API tiers |
-| [`models`](export/models.json) | 80+ | Model specs — context window, max output, training cutoff |
-| [`model_capabilities`](export/model_capabilities.json) | — | Per-model feature matrix — text, vision, tool use, reasoning |
-| [`model_pricing`](export/model_pricing.json) | — | Per-model per-region pricing — standard / batch / cached |
-| [`endpoints`](export/endpoints.json) | 35+ | API base URLs with regional variants (US, EU, CN) |
-| [`model_endpoint_map`](export/model_endpoint_map.json) | — | Model-to-endpoint routing with weights |
-| [`model_aliases`](export/model_aliases.json) | — | Version aliases and timeline tracking |
+| [`provider_plans`](export/provider_plans.json) | 115 | Free / Pro / Team / Enterprise / Token-plan / API tiers |
+| [`models`](export/models.json) | 124 | Model specs — context window, max output, training cutoff |
+| [`model_capabilities`](export/model_capabilities.json) | 158 | Per-model feature matrix — text, vision, tool use, reasoning |
+| [`model_pricing`](export/model_pricing.json) | 44 | Per-model per-region pricing — standard / batch / cached |
+| [`endpoints`](export/endpoints.json) | 29 | API base URLs with regional variants (US, EU, CN) |
+| [`model_endpoint_map`](export/model_endpoint_map.json) | 215 | Model-to-endpoint routing with weights |
+| [`model_aliases`](export/model_aliases.json) | 11 | Version aliases and timeline tracking |
 
 ## Quick Start
 
 ```bash
-# Option A: docker-compose (recommended)
-docker compose up
-# Schema + seed load automatically, then verify row counts
-
-# Option B: direct PostgreSQL
+# Create the database
 createdb modelatlas
+
+# Apply schema
 psql -d modelatlas -f schema.sql
+
+# Load seed data
 psql -d modelatlas -f seed.sql
 
 # Query examples
 psql -d modelatlas -c "SELECT id, name, category, region FROM providers ORDER BY name;"
 psql -d modelatlas -c "SELECT slug, context_window_tokens, status FROM models WHERE provider_id = 'openai' ORDER BY slug;"
 psql -d modelatlas -c "SELECT p.name, pl.slug, pl.tier, pl.monthly_price_usd FROM provider_plans pl JOIN providers p ON p.id = pl.provider_id WHERE pl.tier = 'free' ORDER BY p.name;"
-
-# Regenerate JSON exports
-python3 generate-exports.py
 ```
 
 ## Data Dimensions
@@ -84,7 +80,7 @@ python3 generate-exports.py
 `free` · `pro` · `team` · `enterprise` · `token_plan` · `edu` · `research` · `pay_as_you_go` · `subscription` · `custom`
 
 ### Billing Models
-`per_token` · `subscription` · `token_plan` · `hybrid`
+`per_token` · `subscription` · `token_plan` · `hybrid` · `custom`
 
 ### Model Capabilities
 `text` · `vision` · `image_generation` · `audio` · `video` · `tool_use` · `function_calling` · `structured_output` · `streaming` · `code_execution` · `reasoning` · `extended_thinking` · `computer_use` · `grounding` · `search` · `file_upload` · `multilingual` · `json_mode`
@@ -110,29 +106,20 @@ python3 generate-exports.py
 | Mistral | Large 3 | $0.50 | $1.50 | 262K |
 | Cohere | Command A | $2.50 | $10.00 | 256K |
 
-*Full pricing data for all 80+ models in the database. Prices as of May 2026.*
+*Pricing rows cover the seeded provider/model combinations in `model_pricing`. Prices as of May 2026.*
 
 ## JSON Exports
 
-Per-table JSON exports are available in the `export/` directory. Generated from
-`seed.sql` — supports both literal tuple INSERTs (parsed into JSON rows) and
-subquery-based INSERTs (documented as raw SQL for FK-dependent tables).
+Per-table JSON exports are available in the `export/` directory:
 
 ```bash
-# Regenerate exports from seed.sql
+# Regenerate schema.sql, seed.sql, and export/*.json from FINAL-SYNTHESIS.md.
+# Requires PostgreSQL server tools (`initdb`, `pg_ctl`, `createdb`, `psql`).
 python3 generate-exports.py
-```
 
-| Table | Literal rows | Dynamic inserts |
-|-------|:-----------:|:---------------:|
-| providers | 25 | -- |
-| endpoints | 29 | -- |
-| provider_plans | 115 | -- |
-| models | 102 | -- |
-| model_aliases | 11 | -- |
-| model_capabilities | -- | 29 |
-| model_pricing | -- | 38 |
-| model_endpoint_map | -- | 1 |
+# Verify the release artifacts and public-safety checks
+python3 scripts/verify-release.py
+```
 
 ## Data Freshness
 
@@ -158,45 +145,40 @@ python3 generate-exports.py
 ```
 modelatlas/
 ├── schema.sql                    # PostgreSQL DDL (8 tables, enums, indexes)
-├── seed.sql                      # Full seed data INSERTs (723 lines, wrapped in txn)
-├── generate-exports.py           # JSON export generator from seed.sql
-├── docker-compose.yml            # One-command Postgres test environment
+├── seed.sql                      # Full seed data INSERTs
+├── generate-exports.py           # SQL + JSON artifact generator
+├── scripts/verify-release.py     # Fail-closed release verification
 ├── FINAL-SYNTHESIS.md            # Complete reference (96KB, 1345 lines)
 ├── README.md                     # This file
 ├── LICENSE                       # Apache 2.0
 ├── .github/
-│   ├── workflows/
-│   │   └── ci.yml                # GitHub Actions — SQL validation + export check
 │   └── ISSUE_TEMPLATE/           # GitHub issue templates
 │       └── pricing_update.md     # Template for reporting pricing changes
 │       └── provider_request.md   # Template for requesting new providers
 │       └── bug_report.md         # Template for data errors
-│       └── PULL_REQUEST_TEMPLATE.md
+│   └── PULL_REQUEST_TEMPLATE.md  # PR template
 ├── export/
 │   ├── manifest.json             # Export metadata
 │   ├── providers.json            # 25 providers
-│   ├── provider_plans.json       # 115 plans
-│   ├── models.json               # 102 models with specs
-│   ├── model_capabilities.json   # Capability matrix (dynamic)
-│   ├── model_pricing.json        # All pricing tiers (dynamic)
-│   ├── endpoints.json            # 29 API endpoints
-│   ├── model_endpoint_map.json   # Model-to-endpoint routing (dynamic)
-│   └── model_aliases.json        # 11 version aliases
-└── .swarm/                       # Research pipeline (reproducible)
-    ├── domain1-openai.txt        # DeerFlow research prompts
-    ├── domain2-anthropic.txt
-    ├── domain3-google.txt
-    ├── domain4-xai-deepseek.txt
-    ├── domain5-chinese-providers.txt
-    ├── domain6-mistral-aggregators.txt
-    ├── domain7-others.txt
-    ├── synthesis-modeldb.txt     # Synthesis prompt
-    └── launch-deerflow-modeldb.sh # Swarm launcher
+│   ├── provider_plans.json       # All plans per provider
+│   ├── models.json               # All models with specs
+│   ├── model_capabilities.json   # Capability matrix
+│   ├── model_pricing.json        # All pricing tiers
+│   ├── endpoints.json            # All API endpoints
+│   ├── model_endpoint_map.json   # Model-to-endpoint routing
+│   └── model_aliases.json        # Version aliases
+├── DOMAIN1-OPENAI.md             # Source research summary: OpenAI
+├── DOMAIN2-ANTHROPIC.md          # Source research summary: Anthropic
+├── DOMAIN3-GOOGLE.md             # Source research summary: Google
+├── DOMAIN4-XAI-DEEPSEEK.md       # Source research summary: xAI + DeepSeek
+├── DOMAIN5-CHINESE-PROVIDERS.md  # Source research summary: Chinese providers
+├── DOMAIN6-MISTRAL-AGGREGATORS.md # Source research summary: Mistral + aggregators
+└── DOMAIN7-OTHERS.md             # Source research summary: other providers
 ```
 
 ## Research Methodology
 
-Data was collected via a DeerFlow parallel research swarm — 7 domain agents researching providers in parallel, followed by a synthesis agent that normalized findings into a unified PostgreSQL schema. See `.swarm/` for reproducible research prompts.
+Data was collected via parallel provider-domain research and normalized into a unified PostgreSQL schema. The source research summaries are the `DOMAIN*.md` files; `FINAL-SYNTHESIS.md` is the canonical synthesis consumed by `generate-exports.py`.
 
 ## Contributing
 
@@ -214,6 +196,6 @@ Data compiled from public provider documentation pages. Provider names, logos, a
 
 ## Acknowledgments
 
-- Generated via DeerFlow research swarm using Hermes Agent (Nous Research)
+- Generated via parallel provider-domain research using Hermes Agent (Nous Research)
 - Data sourced from official provider pricing pages, documentation, and public APIs
 - Schema designed for Hermes Modeler provider intelligence layer

@@ -1,17 +1,1942 @@
 {
-  "table": "model_endpoint_map",
-  "export_date": "2026-05-10",
-  "columns": [
-    "model_id",
-    "endpoint_id",
-    "is_default",
-    "routing_weight"
+  "export_date": "2026-05-09",
+  "row_count": 215,
+  "rows": [
+    {
+      "endpoint_id": 1,
+      "id": 1,
+      "is_default": true,
+      "model_id": 1,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 2,
+      "is_default": true,
+      "model_id": 1,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 3,
+      "is_default": true,
+      "model_id": 1,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 4,
+      "is_default": true,
+      "model_id": 2,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 5,
+      "is_default": true,
+      "model_id": 2,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 6,
+      "is_default": true,
+      "model_id": 2,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 7,
+      "is_default": true,
+      "model_id": 3,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 8,
+      "is_default": true,
+      "model_id": 3,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 9,
+      "is_default": true,
+      "model_id": 3,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 10,
+      "is_default": true,
+      "model_id": 4,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 11,
+      "is_default": true,
+      "model_id": 4,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 12,
+      "is_default": true,
+      "model_id": 4,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 13,
+      "is_default": true,
+      "model_id": 5,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 14,
+      "is_default": true,
+      "model_id": 5,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 15,
+      "is_default": true,
+      "model_id": 5,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 16,
+      "is_default": true,
+      "model_id": 6,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 17,
+      "is_default": true,
+      "model_id": 6,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 18,
+      "is_default": true,
+      "model_id": 6,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 19,
+      "is_default": true,
+      "model_id": 7,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 20,
+      "is_default": true,
+      "model_id": 7,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 21,
+      "is_default": true,
+      "model_id": 7,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 22,
+      "is_default": true,
+      "model_id": 8,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 23,
+      "is_default": true,
+      "model_id": 8,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 24,
+      "is_default": true,
+      "model_id": 8,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 25,
+      "is_default": true,
+      "model_id": 9,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 26,
+      "is_default": true,
+      "model_id": 9,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 27,
+      "is_default": true,
+      "model_id": 9,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 28,
+      "is_default": true,
+      "model_id": 10,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 29,
+      "is_default": true,
+      "model_id": 10,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 30,
+      "is_default": true,
+      "model_id": 10,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 31,
+      "is_default": true,
+      "model_id": 11,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 32,
+      "is_default": true,
+      "model_id": 11,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 33,
+      "is_default": true,
+      "model_id": 11,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 34,
+      "is_default": true,
+      "model_id": 12,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 35,
+      "is_default": true,
+      "model_id": 12,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 36,
+      "is_default": true,
+      "model_id": 12,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 37,
+      "is_default": true,
+      "model_id": 13,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 38,
+      "is_default": true,
+      "model_id": 13,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 39,
+      "is_default": true,
+      "model_id": 13,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 40,
+      "is_default": true,
+      "model_id": 14,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 41,
+      "is_default": true,
+      "model_id": 14,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 42,
+      "is_default": true,
+      "model_id": 14,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 43,
+      "is_default": true,
+      "model_id": 15,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 44,
+      "is_default": true,
+      "model_id": 15,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 45,
+      "is_default": true,
+      "model_id": 15,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 46,
+      "is_default": true,
+      "model_id": 16,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 47,
+      "is_default": true,
+      "model_id": 16,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 48,
+      "is_default": true,
+      "model_id": 16,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 49,
+      "is_default": true,
+      "model_id": 17,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 50,
+      "is_default": true,
+      "model_id": 17,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 51,
+      "is_default": true,
+      "model_id": 17,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 52,
+      "is_default": true,
+      "model_id": 18,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 53,
+      "is_default": true,
+      "model_id": 18,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 54,
+      "is_default": true,
+      "model_id": 18,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 1,
+      "id": 55,
+      "is_default": true,
+      "model_id": 19,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 2,
+      "id": 56,
+      "is_default": true,
+      "model_id": 19,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 3,
+      "id": 57,
+      "is_default": true,
+      "model_id": 19,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 58,
+      "is_default": true,
+      "model_id": 20,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 59,
+      "is_default": true,
+      "model_id": 21,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 60,
+      "is_default": true,
+      "model_id": 22,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 61,
+      "is_default": true,
+      "model_id": 23,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 62,
+      "is_default": true,
+      "model_id": 24,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 63,
+      "is_default": true,
+      "model_id": 25,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 64,
+      "is_default": true,
+      "model_id": 26,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 4,
+      "id": 65,
+      "is_default": true,
+      "model_id": 27,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 66,
+      "is_default": true,
+      "model_id": 28,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 67,
+      "is_default": true,
+      "model_id": 28,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 68,
+      "is_default": true,
+      "model_id": 29,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 69,
+      "is_default": true,
+      "model_id": 29,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 70,
+      "is_default": true,
+      "model_id": 30,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 71,
+      "is_default": true,
+      "model_id": 30,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 72,
+      "is_default": true,
+      "model_id": 31,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 73,
+      "is_default": true,
+      "model_id": 31,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 74,
+      "is_default": true,
+      "model_id": 32,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 75,
+      "is_default": true,
+      "model_id": 32,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 76,
+      "is_default": true,
+      "model_id": 33,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 77,
+      "is_default": true,
+      "model_id": 33,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 78,
+      "is_default": true,
+      "model_id": 34,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 79,
+      "is_default": true,
+      "model_id": 34,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 5,
+      "id": 80,
+      "is_default": true,
+      "model_id": 35,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 6,
+      "id": 81,
+      "is_default": true,
+      "model_id": 35,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 82,
+      "is_default": true,
+      "model_id": 36,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 83,
+      "is_default": true,
+      "model_id": 37,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 84,
+      "is_default": true,
+      "model_id": 38,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 85,
+      "is_default": true,
+      "model_id": 39,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 86,
+      "is_default": true,
+      "model_id": 40,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 87,
+      "is_default": true,
+      "model_id": 41,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 88,
+      "is_default": true,
+      "model_id": 42,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 89,
+      "is_default": true,
+      "model_id": 43,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 90,
+      "is_default": true,
+      "model_id": 44,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 91,
+      "is_default": true,
+      "model_id": 45,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 92,
+      "is_default": true,
+      "model_id": 46,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 7,
+      "id": 93,
+      "is_default": true,
+      "model_id": 47,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 8,
+      "id": 94,
+      "is_default": true,
+      "model_id": 48,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 9,
+      "id": 95,
+      "is_default": true,
+      "model_id": 48,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 8,
+      "id": 96,
+      "is_default": true,
+      "model_id": 49,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 9,
+      "id": 97,
+      "is_default": true,
+      "model_id": 49,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 8,
+      "id": 98,
+      "is_default": true,
+      "model_id": 50,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 9,
+      "id": 99,
+      "is_default": true,
+      "model_id": 50,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 8,
+      "id": 100,
+      "is_default": true,
+      "model_id": 51,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 9,
+      "id": 101,
+      "is_default": true,
+      "model_id": 51,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 102,
+      "is_default": true,
+      "model_id": 52,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 103,
+      "is_default": true,
+      "model_id": 52,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 104,
+      "is_default": true,
+      "model_id": 52,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 105,
+      "is_default": true,
+      "model_id": 53,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 106,
+      "is_default": true,
+      "model_id": 53,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 107,
+      "is_default": true,
+      "model_id": 53,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 108,
+      "is_default": true,
+      "model_id": 54,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 109,
+      "is_default": true,
+      "model_id": 54,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 110,
+      "is_default": true,
+      "model_id": 54,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 111,
+      "is_default": true,
+      "model_id": 55,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 112,
+      "is_default": true,
+      "model_id": 55,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 113,
+      "is_default": true,
+      "model_id": 55,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 114,
+      "is_default": true,
+      "model_id": 56,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 115,
+      "is_default": true,
+      "model_id": 56,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 116,
+      "is_default": true,
+      "model_id": 56,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 117,
+      "is_default": true,
+      "model_id": 57,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 118,
+      "is_default": true,
+      "model_id": 57,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 119,
+      "is_default": true,
+      "model_id": 57,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 120,
+      "is_default": true,
+      "model_id": 58,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 121,
+      "is_default": true,
+      "model_id": 58,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 122,
+      "is_default": true,
+      "model_id": 58,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 123,
+      "is_default": true,
+      "model_id": 59,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 124,
+      "is_default": true,
+      "model_id": 59,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 125,
+      "is_default": true,
+      "model_id": 59,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 126,
+      "is_default": true,
+      "model_id": 60,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 127,
+      "is_default": true,
+      "model_id": 60,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 128,
+      "is_default": true,
+      "model_id": 60,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 129,
+      "is_default": true,
+      "model_id": 61,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 130,
+      "is_default": true,
+      "model_id": 61,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 131,
+      "is_default": true,
+      "model_id": 61,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 10,
+      "id": 132,
+      "is_default": true,
+      "model_id": 62,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 11,
+      "id": 133,
+      "is_default": true,
+      "model_id": 62,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 12,
+      "id": 134,
+      "is_default": true,
+      "model_id": 62,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 135,
+      "is_default": true,
+      "model_id": 63,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 136,
+      "is_default": true,
+      "model_id": 63,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 137,
+      "is_default": true,
+      "model_id": 64,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 138,
+      "is_default": true,
+      "model_id": 64,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 139,
+      "is_default": true,
+      "model_id": 65,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 140,
+      "is_default": true,
+      "model_id": 65,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 141,
+      "is_default": true,
+      "model_id": 66,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 142,
+      "is_default": true,
+      "model_id": 66,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 143,
+      "is_default": true,
+      "model_id": 67,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 144,
+      "is_default": true,
+      "model_id": 67,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 145,
+      "is_default": true,
+      "model_id": 68,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 146,
+      "is_default": true,
+      "model_id": 68,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 147,
+      "is_default": true,
+      "model_id": 69,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 148,
+      "is_default": true,
+      "model_id": 69,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 13,
+      "id": 149,
+      "is_default": true,
+      "model_id": 70,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 14,
+      "id": 150,
+      "is_default": true,
+      "model_id": 70,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 15,
+      "id": 151,
+      "is_default": true,
+      "model_id": 71,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 16,
+      "id": 152,
+      "is_default": true,
+      "model_id": 71,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 15,
+      "id": 153,
+      "is_default": true,
+      "model_id": 72,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 16,
+      "id": 154,
+      "is_default": true,
+      "model_id": 72,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 15,
+      "id": 155,
+      "is_default": true,
+      "model_id": 73,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 16,
+      "id": 156,
+      "is_default": true,
+      "model_id": 73,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 15,
+      "id": 157,
+      "is_default": true,
+      "model_id": 74,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 16,
+      "id": 158,
+      "is_default": true,
+      "model_id": 74,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 15,
+      "id": 159,
+      "is_default": true,
+      "model_id": 75,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 16,
+      "id": 160,
+      "is_default": true,
+      "model_id": 75,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 161,
+      "is_default": true,
+      "model_id": 76,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 162,
+      "is_default": true,
+      "model_id": 76,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 163,
+      "is_default": true,
+      "model_id": 77,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 164,
+      "is_default": true,
+      "model_id": 77,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 165,
+      "is_default": true,
+      "model_id": 78,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 166,
+      "is_default": true,
+      "model_id": 78,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 167,
+      "is_default": true,
+      "model_id": 79,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 168,
+      "is_default": true,
+      "model_id": 79,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 169,
+      "is_default": true,
+      "model_id": 80,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 170,
+      "is_default": true,
+      "model_id": 80,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 171,
+      "is_default": true,
+      "model_id": 81,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 172,
+      "is_default": true,
+      "model_id": 81,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 17,
+      "id": 173,
+      "is_default": true,
+      "model_id": 82,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 18,
+      "id": 174,
+      "is_default": true,
+      "model_id": 82,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 175,
+      "is_default": true,
+      "model_id": 83,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 176,
+      "is_default": true,
+      "model_id": 83,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 177,
+      "is_default": true,
+      "model_id": 84,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 178,
+      "is_default": true,
+      "model_id": 84,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 179,
+      "is_default": true,
+      "model_id": 85,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 180,
+      "is_default": true,
+      "model_id": 85,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 181,
+      "is_default": true,
+      "model_id": 86,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 182,
+      "is_default": true,
+      "model_id": 86,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 183,
+      "is_default": true,
+      "model_id": 87,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 184,
+      "is_default": true,
+      "model_id": 87,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 185,
+      "is_default": true,
+      "model_id": 88,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 186,
+      "is_default": true,
+      "model_id": 88,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 19,
+      "id": 187,
+      "is_default": true,
+      "model_id": 89,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 20,
+      "id": 188,
+      "is_default": true,
+      "model_id": 89,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 189,
+      "is_default": true,
+      "model_id": 90,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 190,
+      "is_default": true,
+      "model_id": 91,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 191,
+      "is_default": true,
+      "model_id": 92,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 192,
+      "is_default": true,
+      "model_id": 93,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 193,
+      "is_default": true,
+      "model_id": 94,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 194,
+      "is_default": true,
+      "model_id": 95,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 195,
+      "is_default": true,
+      "model_id": 96,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 196,
+      "is_default": true,
+      "model_id": 97,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 197,
+      "is_default": true,
+      "model_id": 98,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 198,
+      "is_default": true,
+      "model_id": 99,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 199,
+      "is_default": true,
+      "model_id": 100,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 200,
+      "is_default": true,
+      "model_id": 101,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 21,
+      "id": 201,
+      "is_default": true,
+      "model_id": 102,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 26,
+      "id": 202,
+      "is_default": true,
+      "model_id": 103,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 26,
+      "id": 203,
+      "is_default": true,
+      "model_id": 104,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 26,
+      "id": 204,
+      "is_default": true,
+      "model_id": 105,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 26,
+      "id": 205,
+      "is_default": true,
+      "model_id": 106,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 26,
+      "id": 206,
+      "is_default": true,
+      "model_id": 107,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 26,
+      "id": 207,
+      "is_default": true,
+      "model_id": 108,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 27,
+      "id": 208,
+      "is_default": true,
+      "model_id": 109,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 27,
+      "id": 209,
+      "is_default": true,
+      "model_id": 110,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 27,
+      "id": 210,
+      "is_default": true,
+      "model_id": 111,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 27,
+      "id": 211,
+      "is_default": true,
+      "model_id": 112,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 28,
+      "id": 212,
+      "is_default": true,
+      "model_id": 113,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 28,
+      "id": 213,
+      "is_default": true,
+      "model_id": 114,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 28,
+      "id": 214,
+      "is_default": true,
+      "model_id": 115,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    },
+    {
+      "endpoint_id": 28,
+      "id": 215,
+      "is_default": true,
+      "model_id": 116,
+      "notes": null,
+      "plan_id": null,
+      "routing_weight": 100
+    }
   ],
-  "row_count": 0,
-  "dynamic_insert_count": 1,
-  "rows": [],
-  "generator_notes": "Some INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m WHERE slug = '...'). Run seed.sql in PostgreSQL to materialize. The raw SQL is included below for reference.",
-  "subquery_inserts": [
-    "SELECT m.id, e.id, TRUE, 100\nFROM models m\nJOIN endpoints e ON e.provider_id = m.provider_id AND e.status = 'active'\nWHERE NOT EXISTS (\n    SELECT 1 FROM model_endpoint_map mem WHERE mem.model_id = m.id AND mem.is_default = TRUE\n)"
-  ]
+  "table": "model_endpoint_map"
 }

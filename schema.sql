@@ -1,6 +1,6 @@
--- DeerFlow ModelDB Schema
+-- ModelAtlas Schema
 -- Generated 2026-05-09 from FINAL-SYNTHESIS.md
--- PostgreSQL-compatible DDL
+-- PostgreSQL-compatible DDL only. Load seed.sql after this file.
 
 -- ============================================================
 -- ENUM TYPES
@@ -23,7 +23,7 @@ CREATE TYPE plan_tier AS ENUM (
 );
 
 CREATE TYPE billing_model AS ENUM (
-    'per_token', 'subscription', 'token_plan', 'hybrid'
+    'per_token', 'subscription', 'token_plan', 'hybrid', 'custom'
 );
 
 CREATE TYPE model_status AS ENUM ('active', 'beta', 'deprecated', 'sunset');
@@ -41,7 +41,7 @@ CREATE TYPE endpoint_type AS ENUM ('standard', 'batch', 'streaming');
 CREATE TYPE protocol_type AS ENUM ('https', 'websocket', 'grpc');
 
 CREATE TYPE endpoint_auth_method AS ENUM (
-    'bearer_token', 'api_key_header', 'api_key_query', 'oauth', 'custom'
+    'bearer_token', 'api_key', 'api_key_header', 'api_key_query', 'oauth', 'custom'
 );
 
 CREATE TYPE endpoint_status AS ENUM ('active', 'deprecated', 'sunset');
@@ -66,7 +66,9 @@ CREATE TABLE providers (
 );
 
 CREATE INDEX idx_providers_category ON providers(category);
+
 CREATE INDEX idx_providers_region ON providers(region);
+
 CREATE INDEX idx_providers_status ON providers(status);
 
 -- 2. PROVIDER PLANS
@@ -92,6 +94,7 @@ CREATE TABLE provider_plans (
 );
 
 CREATE INDEX idx_provider_plans_tier ON provider_plans(tier);
+
 CREATE INDEX idx_provider_plans_billing ON provider_plans(billing_model);
 
 -- 3. MODELS
@@ -102,8 +105,8 @@ CREATE TABLE models (
     display_name            VARCHAR(256) NOT NULL,
     model_family            VARCHAR(128),
     version_label           VARCHAR(64),
-    context_window_tokens   INTEGER NOT NULL,
-    max_output_tokens       INTEGER NOT NULL,
+    context_window_tokens   INTEGER,
+    max_output_tokens       INTEGER,
     max_batch_output_tokens INTEGER,
     training_cutoff_date    DATE,
     status                  model_status NOT NULL DEFAULT 'active',
@@ -115,8 +118,11 @@ CREATE TABLE models (
 );
 
 CREATE INDEX idx_models_provider ON models(provider_id);
+
 CREATE INDEX idx_models_family ON models(model_family);
+
 CREATE INDEX idx_models_status ON models(status);
+
 CREATE INDEX idx_models_context ON models(context_window_tokens);
 
 -- 4. MODEL CAPABILITIES
@@ -156,8 +162,11 @@ CREATE TABLE model_pricing (
 );
 
 CREATE INDEX idx_model_pricing_model ON model_pricing(model_id);
+
 CREATE INDEX idx_model_pricing_plan ON model_pricing(plan_id);
+
 CREATE INDEX idx_model_pricing_endpoint ON model_pricing(endpoint_type);
+
 CREATE INDEX idx_model_pricing_effective ON model_pricing(effective_date);
 
 -- 6. ENDPOINTS
@@ -178,6 +187,7 @@ CREATE TABLE endpoints (
 );
 
 CREATE INDEX idx_endpoints_provider ON endpoints(provider_id);
+
 CREATE INDEX idx_endpoints_status ON endpoints(status);
 
 -- 7. MODEL-ENDPOINT MAP
@@ -193,6 +203,7 @@ CREATE TABLE model_endpoint_map (
 );
 
 CREATE INDEX idx_model_endpoint_map_model ON model_endpoint_map(model_id);
+
 CREATE INDEX idx_model_endpoint_map_endpoint ON model_endpoint_map(endpoint_id);
 
 -- 8. MODEL ALIASES
@@ -207,5 +218,5 @@ CREATE TABLE model_aliases (
 );
 
 CREATE INDEX idx_model_aliases_alias ON model_aliases(alias);
-CREATE INDEX idx_model_aliases_current ON model_aliases(is_current) WHERE is_current = TRUE;
 
+CREATE INDEX idx_model_aliases_current ON model_aliases(is_current) WHERE is_current = TRUE;

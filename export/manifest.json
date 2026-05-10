@@ -1,23 +1,42 @@
 {
-  "project": "deerflow-modeldb",
-  "description": "Comprehensive AI Provider / Model / Plan / Pricing Database for Hermes Modeler",
-  "generated": "2026-05-10",
-  "task_hash": "001-deerflow-modeldb",
+  "description": "Comprehensive AI provider, model, plan, pricing, and endpoint database",
+  "files": {
+    "exports": {
+      "endpoints": "export/endpoints.json",
+      "model_aliases": "export/model_aliases.json",
+      "model_capabilities": "export/model_capabilities.json",
+      "model_endpoint_map": "export/model_endpoint_map.json",
+      "model_pricing": "export/model_pricing.json",
+      "models": "export/models.json",
+      "provider_plans": "export/provider_plans.json",
+      "providers": "export/providers.json"
+    },
+    "schema_sql": "schema.sql",
+    "seed_sql": "seed.sql",
+    "synthesis": "FINAL-SYNTHESIS.md"
+  },
+  "generated": "2026-05-09",
+  "project": "modelatlas",
+  "row_counts": {
+    "endpoints": 29,
+    "model_aliases": 11,
+    "model_capabilities": 158,
+    "model_endpoint_map": 215,
+    "model_pricing": 44,
+    "models": 124,
+    "provider_plans": 115,
+    "providers": 25
+  },
+  "source": "FINAL-SYNTHESIS.md",
   "tables": [
     "providers",
-    "endpoints",
-    "model_aliases",
     "provider_plans",
     "models",
     "model_capabilities",
     "model_pricing",
-    "model_endpoint_map"
+    "endpoints",
+    "model_endpoint_map",
+    "model_aliases"
   ],
-  "total_literal_rows": 282,
-  "total_dynamic_inserts": 68,
-  "files": {
-    "schema_sql": "schema.sql",
-    "seed_sql": "seed.sql",
-    "synthesis": "FINAL-SYNTHESIS.md"
-  }
+  "total_rows": 721
 }

@@ -1,80 +1,95 @@
 {
-  "table": "model_aliases",
-  "export_date": "2026-05-10",
-  "columns": [
-    "model_id",
-    "alias",
-    "effective_start",
-    "is_current"
-  ],
+  "export_date": "2026-05-09",
   "row_count": 11,
-  "dynamic_insert_count": 0,
   "rows": [
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='gpt-4o')",
       "alias": "gpt-4o-2024-05-13",
+      "effective_end": null,
       "effective_start": "2024-05-13",
-      "is_current": true
+      "id": 1,
+      "is_current": true,
+      "model_id": 1
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='gpt-4o-mini')",
       "alias": "gpt-4o-mini-2024-07-18",
+      "effective_end": null,
       "effective_start": "2024-07-18",
-      "is_current": true
+      "id": 2,
+      "is_current": true,
+      "model_id": 2
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='o1')",
       "alias": "o1-2024-12-17",
+      "effective_end": null,
       "effective_start": "2024-12-17",
-      "is_current": true
+      "id": 3,
+      "is_current": true,
+      "model_id": 6
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='o3')",
       "alias": "o3-2025-04-01",
+      "effective_end": null,
       "effective_start": "2025-04-01",
-      "is_current": true
+      "id": 4,
+      "is_current": true,
+      "model_id": 8
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='o3-mini')",
       "alias": "o3-mini-2025-01-31",
+      "effective_end": null,
       "effective_start": "2025-01-31",
-      "is_current": true
+      "id": 5,
+      "is_current": true,
+      "model_id": 9
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='o4-mini')",
       "alias": "o4-mini-2025-04-16",
+      "effective_end": null,
       "effective_start": "2025-04-16",
-      "is_current": true
+      "id": 6,
+      "is_current": true,
+      "model_id": 10
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='anthropic' AND slug='claude-haiku-4-5')",
       "alias": "claude-haiku-4-5-20251001",
+      "effective_end": null,
       "effective_start": "2025-10-01",
-      "is_current": true
+      "id": 7,
+      "is_current": true,
+      "model_id": 22
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='anthropic' AND slug='claude-3-5-sonnet-20241022')",
       "alias": "claude-3-5-sonnet-20241022",
+      "effective_end": null,
       "effective_start": "2024-10-22",
-      "is_current": true
+      "id": 8,
+      "is_current": true,
+      "model_id": 23
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='anthropic' AND slug='claude-3-5-haiku-20241022')",
       "alias": "claude-3-5-haiku-20241022",
+      "effective_end": null,
       "effective_start": "2024-10-22",
-      "is_current": true
+      "id": 9,
+      "is_current": true,
+      "model_id": 24
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='deepseek' AND slug='deepseek-chat')",
       "alias": "deepseek-chat",
+      "effective_end": null,
       "effective_start": "2024-12-01",
-      "is_current": false
+      "id": 10,
+      "is_current": false,
+      "model_id": 50
     },
     {
-      "model_id": "SELECT id FROM models WHERE provider_id='deepseek' AND slug='deepseek-reasoner')",
       "alias": "deepseek-reasoner",
+      "effective_end": null,
       "effective_start": "2025-01-01",
-      "is_current": false
+      "id": 11,
+      "is_current": false,
+      "model_id": 51
     }
-  ]
+  ],
+  "table": "model_aliases"
 }

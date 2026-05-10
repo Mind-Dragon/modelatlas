@@ -1,46 +1,1587 @@
 {
-  "table": "model_capabilities",
-  "export_date": "2026-05-10",
-  "columns": [
-    "model_id",
-    "capability",
-    "supported",
-    "max_images_per_request",
-    "notes"
+  "export_date": "2026-05-09",
+  "row_count": 158,
+  "rows": [
+    {
+      "capability": "streaming",
+      "id": 1,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 1,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 2,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 1,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 3,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 1,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 4,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 1,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 5,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 1,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 6,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 2,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 7,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 2,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 8,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 2,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 9,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 2,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 10,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 2,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 11,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 3,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 12,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 3,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 13,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 3,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 14,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 3,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 15,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 3,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 16,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 4,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 17,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 4,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 18,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 4,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 19,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 5,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 20,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 5,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 21,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 5,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "reasoning",
+      "id": 22,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 6,
+      "notes": "o-series reasoning models",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 23,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 6,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 24,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 6,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 25,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 6,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "reasoning",
+      "id": 26,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 8,
+      "notes": "o-series reasoning models",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 27,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 8,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 28,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 8,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 29,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 8,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 30,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 8,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 31,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 8,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "reasoning",
+      "id": 32,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 9,
+      "notes": "o-series reasoning models",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 33,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 9,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 34,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 9,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 35,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 9,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "reasoning",
+      "id": 36,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 10,
+      "notes": "o-series reasoning models",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 37,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 10,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "structured_output",
+      "id": 38,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 10,
+      "notes": "JSON mode, structured outputs",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 39,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 10,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 40,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 10,
+      "notes": "Vision/image input",
+      "supported": true
+    },
+    {
+      "capability": "image_generation",
+      "id": 41,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 14,
+      "notes": "Native DALL-E generation",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 42,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 15,
+      "notes": "Speech-to-text",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 43,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "computer_use",
+      "id": 44,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "Computer use (agentic UI interaction)",
+      "supported": true
+    },
+    {
+      "capability": "extended_thinking",
+      "id": 45,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "Adaptive thinking replaces manual extended thinking on Opus 4.7",
+      "supported": false
+    },
+    {
+      "capability": "streaming",
+      "id": 46,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 47,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 48,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 49,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 20,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 50,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "computer_use",
+      "id": 51,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "Computer use (agentic UI interaction)",
+      "supported": true
+    },
+    {
+      "capability": "extended_thinking",
+      "id": 52,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "Extended thinking (Sonnet 4.6, Haiku 4.5)",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 53,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 54,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 55,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 56,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 21,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 57,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "computer_use",
+      "id": 58,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "Computer use (agentic UI interaction)",
+      "supported": true
+    },
+    {
+      "capability": "extended_thinking",
+      "id": 59,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "Extended thinking (Sonnet 4.6, Haiku 4.5)",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 60,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 61,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 62,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 63,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 22,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 64,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 23,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "computer_use",
+      "id": 65,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 23,
+      "notes": "Computer use (agentic UI interaction)",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 66,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 23,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 67,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 23,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 68,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 23,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 69,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 23,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 70,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 24,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 71,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 24,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 72,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 24,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 73,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 24,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 74,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 24,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 75,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 25,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 76,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 25,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 77,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 25,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 78,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 25,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 79,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 25,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 80,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 26,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 81,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 26,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 82,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 26,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 83,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 26,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 84,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 26,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 85,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 27,
+      "notes": "50 free hours/day/org, then $0.05/hr/container",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 86,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 27,
+      "notes": "SSE streaming",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 87,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 27,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 88,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 27,
+      "notes": "Parallel tool execution, function calling",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 89,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 27,
+      "notes": "Images and PDFs as input, counted as input tokens",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 90,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 91,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "grounding",
+      "id": 92,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Google Search grounding",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 93,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 94,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 95,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 96,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 28,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 97,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 98,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "grounding",
+      "id": 99,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Google Search grounding",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 100,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 101,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 102,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 103,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 29,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 104,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 30,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 105,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 30,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 106,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 30,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 107,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 30,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 108,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 30,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 109,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 30,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 110,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 111,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "grounding",
+      "id": 112,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Google Search grounding",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 113,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 114,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 115,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 116,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 31,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 117,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 32,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 118,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 32,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 119,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 32,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 120,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 32,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 121,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 122,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "grounding",
+      "id": 123,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Google Search grounding",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 124,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 125,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 126,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 127,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 33,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 128,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 129,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "grounding",
+      "id": 130,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Google Search grounding",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 131,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 132,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 133,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 134,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 34,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "audio",
+      "id": 135,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Audio input",
+      "supported": true
+    },
+    {
+      "capability": "code_execution",
+      "id": 136,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Code execution supported",
+      "supported": true
+    },
+    {
+      "capability": "grounding",
+      "id": 137,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Google Search grounding",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 138,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Streaming supported",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 139,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "video",
+      "id": 140,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Video input (258 tokens/second)",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 141,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 35,
+      "notes": "Image input",
+      "supported": true
+    },
+    {
+      "capability": "json_mode",
+      "id": 142,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 48,
+      "notes": "JSON output in both thinking and non-thinking modes",
+      "supported": true
+    },
+    {
+      "capability": "reasoning",
+      "id": 143,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 48,
+      "notes": "Thinking mode (default for V4 Flash/Pro)",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 144,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 48,
+      "notes": "SSE with keep-alive",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 145,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 48,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 146,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 48,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 147,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 48,
+      "notes": "Text-only models currently",
+      "supported": false
+    },
+    {
+      "capability": "json_mode",
+      "id": 148,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 49,
+      "notes": "JSON output in both thinking and non-thinking modes",
+      "supported": true
+    },
+    {
+      "capability": "reasoning",
+      "id": 149,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 49,
+      "notes": "Thinking mode (default for V4 Flash/Pro)",
+      "supported": true
+    },
+    {
+      "capability": "streaming",
+      "id": 150,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 49,
+      "notes": "SSE with keep-alive",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 151,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 49,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "tool_use",
+      "id": 152,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 49,
+      "notes": "Function calling, tool use",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 153,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 49,
+      "notes": "Text-only models currently",
+      "supported": false
+    },
+    {
+      "capability": "text",
+      "id": 154,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 50,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 155,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 50,
+      "notes": "Text-only models currently",
+      "supported": false
+    },
+    {
+      "capability": "reasoning",
+      "id": 156,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 51,
+      "notes": "Thinking mode (default for V4 Flash/Pro)",
+      "supported": true
+    },
+    {
+      "capability": "text",
+      "id": 157,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 51,
+      "notes": "Text input/output",
+      "supported": true
+    },
+    {
+      "capability": "vision",
+      "id": 158,
+      "max_audio_seconds": null,
+      "max_images_per_request": null,
+      "max_video_seconds": null,
+      "model_id": 51,
+      "notes": "Text-only models currently",
+      "supported": false
+    }
   ],
-  "row_count": 0,
-  "dynamic_insert_count": 29,
-  "rows": [],
-  "generator_notes": "Some INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m WHERE slug = '...'). Run seed.sql in PostgreSQL to materialize. The raw SQL is included below for reference.",
-  "subquery_inserts": [
-    "SELECT m.id, 'text', TRUE, NULL, 'Text input/output'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'o3')",
-    "SELECT m.id, 'vision', TRUE, NULL, 'Vision/image input'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o1', 'o3', 'o4-mini')",
-    "SELECT m.id, 'tool_use', TRUE, 'Function calling, tool use'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o1', 'o3', 'o3-mini', 'o4-mini')",
-    "SELECT m.id, 'streaming', TRUE, 'SSE streaming'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'o3', 'o3-mini', 'o4-mini')",
-    "SELECT m.id, 'structured_output', TRUE, 'JSON mode, structured outputs'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o1', 'o3', 'o3-mini', 'o4-mini')",
-    "SELECT m.id, 'reasoning', TRUE, 'o-series reasoning models'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('o1', 'o3', 'o3-mini', 'o4-mini')",
-    "SELECT m.id, 'image_generation', TRUE, 'Native DALL-E generation'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug = 'dall-e-3'",
-    "SELECT m.id, 'audio', TRUE, 'Speech-to-text'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug = 'whisper-1'",
-    "SELECT m.id, 'text', TRUE, 'Text input/output'\nFROM models m WHERE m.provider_id = 'anthropic'",
-    "SELECT m.id, 'vision', TRUE, 'Images and PDFs as input, counted as input tokens'\nFROM models m WHERE m.provider_id = 'anthropic'",
-    "SELECT m.id, 'tool_use', TRUE, 'Parallel tool execution, function calling'\nFROM models m WHERE m.provider_id = 'anthropic'",
-    "SELECT m.id, 'streaming', TRUE, 'SSE streaming'\nFROM models m WHERE m.provider_id = 'anthropic'",
-    "SELECT m.id, 'extended_thinking', TRUE, 'Extended thinking (Sonnet 4.6, Haiku 4.5)'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.slug IN ('claude-sonnet-4-6', 'claude-haiku-4-5')",
-    "SELECT m.id, 'extended_thinking', FALSE, 'Adaptive thinking replaces manual extended thinking on Opus 4.7'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.slug = 'claude-opus-4-7'",
-    "SELECT m.id, 'computer_use', TRUE, 'Computer use (agentic UI interaction)'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.slug IN ('claude-opus-4-7', 'claude-sonnet-4-6', 'claude-haiku-4-5', 'claude-3-5-sonnet-20241022')",
-    "SELECT m.id, 'code_execution', TRUE, '50 free hours/day/org, then $0.05/hr/container'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.model_family LIKE 'Claude %'",
-    "SELECT m.id, 'text', TRUE, 'Text input/output'\nFROM models m WHERE m.provider_id = 'google'",
-    "SELECT m.id, 'vision', TRUE, 'Image input'\nFROM models m WHERE m.provider_id = 'google'",
-    "SELECT m.id, 'video', TRUE, 'Video input (258 tokens/second)'\nFROM models m WHERE m.provider_id = 'google' AND m.slug NOT IN ('gemini-2-0-flash-lite')",
-    "SELECT m.id, 'audio', TRUE, 'Audio input'\nFROM models m WHERE m.provider_id = 'google' AND m.slug NOT IN ('gemini-2-0-flash-lite')",
-    "SELECT m.id, 'code_execution', TRUE, 'Code execution supported'\nFROM models m WHERE m.provider_id = 'google'",
-    "SELECT m.id, 'grounding', TRUE, 'Google Search grounding'\nFROM models m WHERE m.provider_id = 'google' AND m.slug IN ('gemini-2-5-pro', 'gemini-2-5-flash', 'gemini-2-0-flash', 'gemini-1-5-pro', 'gemini-1-5-flash', 'gemini-1-5-flash-8b')",
-    "SELECT m.id, 'streaming', TRUE, 'Streaming supported'\nFROM models m WHERE m.provider_id = 'google'",
-    "SELECT m.id, 'text', TRUE, 'Text input/output'\nFROM models m WHERE m.provider_id = 'deepseek'",
-    "SELECT m.id, 'reasoning', TRUE, 'Thinking mode (default for V4 Flash/Pro)'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro', 'deepseek-reasoner')",
-    "SELECT m.id, 'streaming', TRUE, 'SSE with keep-alive'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro')",
-    "SELECT m.id, 'tool_use', TRUE, 'Function calling, tool use'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro')",
-    "SELECT m.id, 'json_mode', TRUE, 'JSON output in both thinking and non-thinking modes'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro')",
-    "SELECT m.id, 'vision', FALSE, 'Text-only models currently'\nFROM models m WHERE m.provider_id = 'deepseek'"
-  ]
+  "table": "model_capabilities"
 }

@@ -17,7 +17,7 @@ jobs:
           POSTGRES_USER: modelatlas
           POSTGRES_PASSWORD: modelatlas
         options: >-
-          --health-cmd pg_isready -U modelatlas -d modelatlas
+          --health-cmd "pg_isready -U modelatlas -d modelatlas"
           --health-interval 5s
           --health-timeout 3s
           --health-retries 5
@@ -26,6 +26,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
 
       - name: Load schema
         run: PGPASSWORD=modelatlas psql -h localhost -U modelatlas -d modelatlas -f schema.sql
@@ -52,6 +57,22 @@ jobs:
 
   validate-exports:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: modelatlas
+          POSTGRES_USER: modelatlas
+          POSTGRES_PASSWORD: modelatlas
+        options: >-
+          --health-cmd "pg_isready -U modelatlas -d modelatlas"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    env:
+      MODELATLAS_DATABASE_URL: postgresql://modelatlas:modelatlas@localhost:5432/modelatlas
     steps:
       - uses: actions/checkout@v4
 
@@ -60,8 +81,16 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
       - name: Regenerate exports
-        run: python3 generate-exports.py
+        run: python3 generate-exports.py --database-url "$MODELATLAS_DATABASE_URL"
+
+      - name: Verify generated exports are committed
+        run: git diff --exit-code -- schema.sql seed.sql export
 
       - name: Verify export files
         run: |

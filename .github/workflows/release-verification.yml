@@ -1,0 +1,41 @@
+name: release-verification
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_DB: modelatlas
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres -d modelatlas"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+    env:
+      MODELATLAS_DATABASE_URL: postgresql://postgres:postgres@localhost:5432/modelatlas
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+      - name: Regenerate artifacts
+        run: python3 generate-exports.py --database-url "$MODELATLAS_DATABASE_URL"
+      - name: Check generated artifacts are committed
+        run: git diff --exit-code -- schema.sql seed.sql export
+      - name: Verify release artifacts
+        run: python3 scripts/verify-release.py --database-url "$MODELATLAS_DATABASE_URL"
