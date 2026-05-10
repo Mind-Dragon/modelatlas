@@ -1,0 +1,3 @@
+Research Google's Gemini models: 2.5 Pro/Flash/Lite, 2.0 Flash/Lite, 1.5 Pro/Flash. Document Vertex AI vs Gemini API, pricing per model, rate tiers, and capabilities (grounding, video, audio, code execution).
+
+Output: DOMAIN3-GOOGLE.md

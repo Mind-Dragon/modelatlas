@@ -2,6 +2,7 @@
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Compatible-336791.svg?logo=postgresql)](https://www.postgresql.org/)
+[![CI](https://github.com/Mind-Dragon/modelatlas/actions/workflows/ci.yml/badge.svg)](https://github.com/Mind-Dragon/modelatlas/actions/workflows/ci.yml)
 [![Providers](https://img.shields.io/badge/Providers-25-green.svg)]()
 [![Models](https://img.shields.io/badge/Models-80%2B-orange.svg)]()
 [![Plans](https://img.shields.io/badge/Plans-120%2B-yellow.svg)]()
@@ -59,19 +60,22 @@ Each provider is cataloged across **8 normalized dimensions**: plans, models, pr
 ## Quick Start
 
 ```bash
-# Create the database
+# Option A: docker-compose (recommended)
+docker compose up
+# Schema + seed load automatically, then verify row counts
+
+# Option B: direct PostgreSQL
 createdb modelatlas
-
-# Apply schema
 psql -d modelatlas -f schema.sql
-
-# Load seed data
 psql -d modelatlas -f seed.sql
 
 # Query examples
 psql -d modelatlas -c "SELECT id, name, category, region FROM providers ORDER BY name;"
 psql -d modelatlas -c "SELECT slug, context_window_tokens, status FROM models WHERE provider_id = 'openai' ORDER BY slug;"
 psql -d modelatlas -c "SELECT p.name, pl.slug, pl.tier, pl.monthly_price_usd FROM provider_plans pl JOIN providers p ON p.id = pl.provider_id WHERE pl.tier = 'free' ORDER BY p.name;"
+
+# Regenerate JSON exports
+python3 generate-exports.py
 ```
 
 ## Data Dimensions
@@ -110,12 +114,25 @@ psql -d modelatlas -c "SELECT p.name, pl.slug, pl.tier, pl.monthly_price_usd FRO
 
 ## JSON Exports
 
-Per-table JSON exports are available in the `export/` directory:
+Per-table JSON exports are available in the `export/` directory. Generated from
+`seed.sql` — supports both literal tuple INSERTs (parsed into JSON rows) and
+subquery-based INSERTs (documented as raw SQL for FK-dependent tables).
 
 ```bash
-# Regenerate exports from FINAL-SYNTHESIS.md
+# Regenerate exports from seed.sql
 python3 generate-exports.py
 ```
+
+| Table | Literal rows | Dynamic inserts |
+|-------|:-----------:|:---------------:|
+| providers | 25 | -- |
+| endpoints | 29 | -- |
+| provider_plans | 115 | -- |
+| models | 102 | -- |
+| model_aliases | 11 | -- |
+| model_capabilities | -- | 29 |
+| model_pricing | -- | 38 |
+| model_endpoint_map | -- | 1 |
 
 ## Data Freshness
 
@@ -141,27 +158,30 @@ python3 generate-exports.py
 ```
 modelatlas/
 ├── schema.sql                    # PostgreSQL DDL (8 tables, enums, indexes)
-├── seed.sql                      # Full seed data INSERTs
-├── generate-exports.py           # JSON export generator
+├── seed.sql                      # Full seed data INSERTs (723 lines, wrapped in txn)
+├── generate-exports.py           # JSON export generator from seed.sql
+├── docker-compose.yml            # One-command Postgres test environment
 ├── FINAL-SYNTHESIS.md            # Complete reference (96KB, 1345 lines)
 ├── README.md                     # This file
 ├── LICENSE                       # Apache 2.0
 ├── .github/
+│   ├── workflows/
+│   │   └── ci.yml                # GitHub Actions — SQL validation + export check
 │   └── ISSUE_TEMPLATE/           # GitHub issue templates
 │       └── pricing_update.md     # Template for reporting pricing changes
 │       └── provider_request.md   # Template for requesting new providers
 │       └── bug_report.md         # Template for data errors
-│   └── PULL_REQUEST_TEMPLATE.md  # PR template
+│       └── PULL_REQUEST_TEMPLATE.md
 ├── export/
 │   ├── manifest.json             # Export metadata
 │   ├── providers.json            # 25 providers
-│   ├── provider_plans.json       # All plans per provider
-│   ├── models.json               # All models with specs
-│   ├── model_capabilities.json   # Capability matrix
-│   ├── model_pricing.json        # All pricing tiers
-│   ├── endpoints.json            # All API endpoints
-│   ├── model_endpoint_map.json   # Model-to-endpoint routing
-│   └── model_aliases.json        # Version aliases
+│   ├── provider_plans.json       # 115 plans
+│   ├── models.json               # 102 models with specs
+│   ├── model_capabilities.json   # Capability matrix (dynamic)
+│   ├── model_pricing.json        # All pricing tiers (dynamic)
+│   ├── endpoints.json            # 29 API endpoints
+│   ├── model_endpoint_map.json   # Model-to-endpoint routing (dynamic)
+│   └── model_aliases.json        # 11 version aliases
 └── .swarm/                       # Research pipeline (reproducible)
     ├── domain1-openai.txt        # DeerFlow research prompts
     ├── domain2-anthropic.txt

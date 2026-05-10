@@ -1,0 +1,3 @@
+Research OpenAI's full model catalog, pricing plans, rate limits, API endpoints, and capabilities. Cover GPT-4o, GPT-4.1, o-series, DALL-E, Whisper, TTS, and embeddings. Include all consumer plans (Free, Go, Plus, Pro) and API tiers.
+
+Output: DOMAIN1-OPENAI.md

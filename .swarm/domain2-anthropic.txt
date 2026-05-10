@@ -1,0 +1,3 @@
+Research Anthropic's Claude model family: Opus 4.7, Sonnet 4.6, Haiku 4.5, and legacy 3.x models. Document pricing, plans (Free/Pro/Max/Team/Enterprise), rate tiers, and API endpoints.
+
+Output: DOMAIN2-ANTHROPIC.md

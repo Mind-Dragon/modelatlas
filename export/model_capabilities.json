@@ -1,15 +1,46 @@
 {
   "table": "model_capabilities",
-  "export_date": "2026-05-09",
-  "description": "DeerFlow ModelDB \u2014 model_capabilities",
-  "row_count": 29,
-  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
-  "raw_inserts": [
-    "INSERT INTO model_capabilities (model_id, capability, supported, max_images_per_request, notes)",
-    "INSERT INTO model_capabilities (model_id, capability, supported, max_images_per_request, notes)",
-    "INSERT INTO model_capabilities (model_id, capability, supported, notes)",
-    "INSERT INTO model_capabilities (model_id, capability, supported, notes)",
-    "INSERT INTO model_capabilities (model_id, capability, supported, notes)"
+  "export_date": "2026-05-10",
+  "columns": [
+    "model_id",
+    "capability",
+    "supported",
+    "max_images_per_request",
+    "notes"
   ],
-  "total_inserts": 29
+  "row_count": 0,
+  "dynamic_insert_count": 29,
+  "rows": [],
+  "generator_notes": "Some INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m WHERE slug = '...'). Run seed.sql in PostgreSQL to materialize. The raw SQL is included below for reference.",
+  "subquery_inserts": [
+    "SELECT m.id, 'text', TRUE, NULL, 'Text input/output'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'o3')",
+    "SELECT m.id, 'vision', TRUE, NULL, 'Vision/image input'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o1', 'o3', 'o4-mini')",
+    "SELECT m.id, 'tool_use', TRUE, 'Function calling, tool use'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o1', 'o3', 'o3-mini', 'o4-mini')",
+    "SELECT m.id, 'streaming', TRUE, 'SSE streaming'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'o3', 'o3-mini', 'o4-mini')",
+    "SELECT m.id, 'structured_output', TRUE, 'JSON mode, structured outputs'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('gpt-4o', 'gpt-4o-mini', 'gpt-4.1', 'gpt-4.1-mini', 'gpt-4.1-nano', 'o1', 'o3', 'o3-mini', 'o4-mini')",
+    "SELECT m.id, 'reasoning', TRUE, 'o-series reasoning models'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug IN ('o1', 'o3', 'o3-mini', 'o4-mini')",
+    "SELECT m.id, 'image_generation', TRUE, 'Native DALL-E generation'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug = 'dall-e-3'",
+    "SELECT m.id, 'audio', TRUE, 'Speech-to-text'\nFROM models m WHERE m.provider_id = 'openai' AND m.slug = 'whisper-1'",
+    "SELECT m.id, 'text', TRUE, 'Text input/output'\nFROM models m WHERE m.provider_id = 'anthropic'",
+    "SELECT m.id, 'vision', TRUE, 'Images and PDFs as input, counted as input tokens'\nFROM models m WHERE m.provider_id = 'anthropic'",
+    "SELECT m.id, 'tool_use', TRUE, 'Parallel tool execution, function calling'\nFROM models m WHERE m.provider_id = 'anthropic'",
+    "SELECT m.id, 'streaming', TRUE, 'SSE streaming'\nFROM models m WHERE m.provider_id = 'anthropic'",
+    "SELECT m.id, 'extended_thinking', TRUE, 'Extended thinking (Sonnet 4.6, Haiku 4.5)'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.slug IN ('claude-sonnet-4-6', 'claude-haiku-4-5')",
+    "SELECT m.id, 'extended_thinking', FALSE, 'Adaptive thinking replaces manual extended thinking on Opus 4.7'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.slug = 'claude-opus-4-7'",
+    "SELECT m.id, 'computer_use', TRUE, 'Computer use (agentic UI interaction)'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.slug IN ('claude-opus-4-7', 'claude-sonnet-4-6', 'claude-haiku-4-5', 'claude-3-5-sonnet-20241022')",
+    "SELECT m.id, 'code_execution', TRUE, '50 free hours/day/org, then $0.05/hr/container'\nFROM models m WHERE m.provider_id = 'anthropic' AND m.model_family LIKE 'Claude %'",
+    "SELECT m.id, 'text', TRUE, 'Text input/output'\nFROM models m WHERE m.provider_id = 'google'",
+    "SELECT m.id, 'vision', TRUE, 'Image input'\nFROM models m WHERE m.provider_id = 'google'",
+    "SELECT m.id, 'video', TRUE, 'Video input (258 tokens/second)'\nFROM models m WHERE m.provider_id = 'google' AND m.slug NOT IN ('gemini-2-0-flash-lite')",
+    "SELECT m.id, 'audio', TRUE, 'Audio input'\nFROM models m WHERE m.provider_id = 'google' AND m.slug NOT IN ('gemini-2-0-flash-lite')",
+    "SELECT m.id, 'code_execution', TRUE, 'Code execution supported'\nFROM models m WHERE m.provider_id = 'google'",
+    "SELECT m.id, 'grounding', TRUE, 'Google Search grounding'\nFROM models m WHERE m.provider_id = 'google' AND m.slug IN ('gemini-2-5-pro', 'gemini-2-5-flash', 'gemini-2-0-flash', 'gemini-1-5-pro', 'gemini-1-5-flash', 'gemini-1-5-flash-8b')",
+    "SELECT m.id, 'streaming', TRUE, 'Streaming supported'\nFROM models m WHERE m.provider_id = 'google'",
+    "SELECT m.id, 'text', TRUE, 'Text input/output'\nFROM models m WHERE m.provider_id = 'deepseek'",
+    "SELECT m.id, 'reasoning', TRUE, 'Thinking mode (default for V4 Flash/Pro)'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro', 'deepseek-reasoner')",
+    "SELECT m.id, 'streaming', TRUE, 'SSE with keep-alive'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro')",
+    "SELECT m.id, 'tool_use', TRUE, 'Function calling, tool use'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro')",
+    "SELECT m.id, 'json_mode', TRUE, 'JSON output in both thinking and non-thinking modes'\nFROM models m WHERE m.provider_id = 'deepseek' AND m.slug IN ('deepseek-v4-flash', 'deepseek-v4-pro')",
+    "SELECT m.id, 'vision', FALSE, 'Text-only models currently'\nFROM models m WHERE m.provider_id = 'deepseek'"
+  ]
 }

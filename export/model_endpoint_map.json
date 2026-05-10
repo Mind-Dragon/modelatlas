@@ -1,11 +1,17 @@
 {
   "table": "model_endpoint_map",
-  "export_date": "2026-05-09",
-  "description": "DeerFlow ModelDB \u2014 model_endpoint_map",
-  "row_count": 1,
-  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
-  "raw_inserts": [
-    "INSERT INTO model_endpoint_map (model_id, endpoint_id, is_default, routing_weight)"
+  "export_date": "2026-05-10",
+  "columns": [
+    "model_id",
+    "endpoint_id",
+    "is_default",
+    "routing_weight"
   ],
-  "total_inserts": 1
+  "row_count": 0,
+  "dynamic_insert_count": 1,
+  "rows": [],
+  "generator_notes": "Some INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m WHERE slug = '...'). Run seed.sql in PostgreSQL to materialize. The raw SQL is included below for reference.",
+  "subquery_inserts": [
+    "SELECT m.id, e.id, TRUE, 100\nFROM models m\nJOIN endpoints e ON e.provider_id = m.provider_id AND e.status = 'active'\nWHERE NOT EXISTS (\n    SELECT 1 FROM model_endpoint_map mem WHERE mem.model_id = m.id AND mem.is_default = TRUE\n)"
+  ]
 }

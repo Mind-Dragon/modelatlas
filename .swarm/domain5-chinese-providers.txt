@@ -1,0 +1,3 @@
+Research Chinese AI providers: Alibaba (Qwen), Zhipu (GLM), MiniMax (M-series), Moonshot/Kimi (K2), ByteDance (Seed/Doubao), 01.AI (Yi), Baichuan. Document pricing, token plans, API endpoints, and model capabilities.
+
+Output: DOMAIN5-CHINESE-PROVIDERS.md

@@ -1,0 +1,78 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate-sql:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: modelatlas
+          POSTGRES_USER: modelatlas
+          POSTGRES_PASSWORD: modelatlas
+        options: >-
+          --health-cmd pg_isready -U modelatlas -d modelatlas
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Load schema
+        run: PGPASSWORD=modelatlas psql -h localhost -U modelatlas -d modelatlas -f schema.sql
+
+      - name: Load seed data
+        run: PGPASSWORD=modelatlas psql -h localhost -U modelatlas -d modelatlas -f seed.sql
+
+      - name: Verify row counts
+        env:
+          PGPASSWORD: modelatlas
+        run: |
+          psql -h localhost -U modelatlas -d modelatlas -c "SELECT 'providers' AS tbl, COUNT(*) AS rows FROM providers UNION ALL SELECT 'endpoints', COUNT(*) FROM endpoints UNION ALL SELECT 'provider_plans', COUNT(*) FROM provider_plans UNION ALL SELECT 'models', COUNT(*) FROM models UNION ALL SELECT 'model_capabilities', COUNT(*) FROM model_capabilities UNION ALL SELECT 'model_pricing', COUNT(*) FROM model_pricing UNION ALL SELECT 'model_aliases', COUNT(*) FROM model_aliases UNION ALL SELECT 'model_endpoint_map', COUNT(*) FROM model_endpoint_map ORDER BY tbl;"
+
+      - name: Spot check queries
+        env:
+          PGPASSWORD: modelatlas
+        run: |
+          echo "=== Providers by category ==="
+          psql -h localhost -U modelatlas -d modelatlas -c "SELECT category, COUNT(*) FROM providers GROUP BY category ORDER BY category;"
+          echo "=== Free plans ==="
+          psql -h localhost -U modelatlas -d modelatlas -c "SELECT p.name, pl.slug, pl.tier, pl.monthly_price_usd FROM provider_plans pl JOIN providers p ON p.id = pl.provider_id WHERE pl.tier = 'free' ORDER BY p.name;"
+          echo "=== Active models by provider ==="
+          psql -h localhost -U modelatlas -d modelatlas -c "SELECT provider_id, COUNT(*) FROM models WHERE status = 'active' GROUP BY provider_id ORDER BY provider_id;"
+
+  validate-exports:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate exports
+        run: python3 generate-exports.py
+
+      - name: Verify export files
+        run: |
+          for f in export/manifest.json export/providers.json export/endpoints.json \
+                   export/provider_plans.json export/models.json \
+                   export/model_capabilities.json export/model_pricing.json \
+                   export/model_aliases.json export/model_endpoint_map.json; do
+            if [ ! -s "$f" ]; then
+              echo "ERROR: $f is missing or empty"
+              exit 1
+            fi
+            rows=$(python3 -c "import json; print(json.load(open('$f')).get('row_count', 0))")
+            echo "$f -- $rows literal rows"
+          done

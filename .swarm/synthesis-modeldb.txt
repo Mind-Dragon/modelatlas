@@ -1,0 +1,1 @@
+Synthesize all 7 domain research files into a unified PostgreSQL schema and seed data. Normalize plans, models, pricing, capabilities, endpoints, aliases, and lifecycle dates across all providers. Output FINAL-SYNTHESIS.md with embedded SQL DDL and DML blocks.

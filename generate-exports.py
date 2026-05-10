@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""generate-exports.py — Extract SQL from FINAL-SYNTHESIS.md properly.
+"""generate-exports.py — Parse seed.sql and generate JSON exports.
 
-Extracts each complete ```sql block and writes:
-  - schema.sql — all DDL (CREATE TYPE, CREATE TABLE, CREATE INDEX)
-  - seed.sql — all DML (INSERT, SELECT used as subqueries)
-  - export/*.json — per-table JSON data
+Reads the standalone schema.sql and seed.sql files, extracts per-table
+INSERT data, and writes export/*.json files. Handles both literal tuple
+INSERTs and subquery-based INSERTs (documenting the latter as raw SQL).
 """
 
 import json
@@ -12,127 +11,126 @@ import os
 import re
 
 OUTDIR = os.path.dirname(os.path.abspath(__file__))
-SYNTHESIS_FILE = os.path.join(OUTDIR, "FINAL-SYNTHESIS.md")
-EXPORT_DIR = os.path.join(OUTDIR, "export")
-SCHEMA_FILE = os.path.join(OUTDIR, "schema.sql")
 SEED_FILE = os.path.join(OUTDIR, "seed.sql")
+SCHEMA_FILE = os.path.join(OUTDIR, "schema.sql")
+EXPORT_DIR = os.path.join(OUTDIR, "export")
 
 os.makedirs(EXPORT_DIR, exist_ok=True)
 
-with open(SYNTHESIS_FILE) as f:
-    content = f.read()
+# ── Parse seed.sql ──────────────────────────────────────────────
+with open(SEED_FILE) as f:
+    seed_text = f.read()
 
-# Extract each complete ```sql ... ``` block
-sql_blocks = re.findall(r'```sql\n(.*?)\n```', content, re.DOTALL)
+# Strip the outer BEGIN / COMMIT transaction wrapper
+seed_text = re.sub(r'(?is)^\s*BEGIN;\s*', '', seed_text)
+seed_text = re.sub(r'(?is)\s*COMMIT;\s*$', '', seed_text)
 
-ddl_blocks = []
-dml_blocks = []
+# Extract each INSERT statement
+# Pattern: INSERT INTO table (cols) VALUES ...
+#        or INSERT INTO table (cols) SELECT ...
+insert_pattern = re.compile(
+    r'INSERT\s+INTO\s+(\w+)\s*\(([^)]+)\)\s*(VALUES\s*.*?|SELECT\s+.*?);',
+    re.DOTALL | re.IGNORECASE
+)
 
-for block in sql_blocks:
-    stripped = block.strip()
-    if not stripped:
-        continue
-    first_keyword = stripped.split()[0].upper() if stripped.split() else ""
-    if first_keyword in ("CREATE", "--"):
-        ddl_blocks.append(stripped)
-    elif first_keyword in ("INSERT", "BEGIN", "COMMIT"):
-        dml_blocks.append(stripped)
-    else:
-        # Mixed or unlabeled — detect content
-        if "CREATE" in stripped:
-            ddl_blocks.append(stripped)
-        elif "INSERT" in stripped:
-            dml_blocks.append(stripped)
+table_data = {}  # table_name -> {columns, literal_rows, subquery_blocks}
 
-# Write schema.sql
-with open(SCHEMA_FILE, 'w') as f:
-    f.write('-- DeerFlow ModelDB Schema\n')
-    f.write('-- Generated 2026-05-09 from FINAL-SYNTHESIS.md\n')
-    f.write('-- PostgreSQL-compatible DDL\n\n')
-    f.write('\n\n'.join(ddl_blocks))
-    f.write('\n')
-print(f"Schema: {SCHEMA_FILE} ({len(ddl_blocks)} blocks)")
+for match in insert_pattern.finditer(seed_text):
+    table_name = match.group(1)
+    columns_str = match.group(2)
+    body = match.group(3).strip()
 
-# Write seed.sql — wrap in transaction
-with open(SEED_FILE, 'w') as f:
-    f.write('-- DeerFlow ModelDB Seed Data\n')
-    f.write('-- Generated 2026-05-09 from FINAL-SYNTHESIS.md\n')
-    f.write('-- Run AFTER schema.sql\n\n')
-    f.write("BEGIN;\n\n")
-    f.write('\n\n'.join(dml_blocks))
-    f.write("\n\nCOMMIT;\n")
-print(f"Seed: {SEED_FILE} ({len(dml_blocks)} blocks)")
+    if table_name not in table_data:
+        table_data[table_name] = {
+            "columns": [],
+            "literal_rows": [],
+            "subquery_blocks": [],
+        }
 
-# Parse INSERT INTO ... VALUES into structured JSON
-# Match: INSERT INTO table_name (col1, col2, ...) VALUES (...), (...), ...;
-table_data = {}
+    cols = [c.strip().strip('"') for c in columns_str.split(',')]
+    if not table_data[table_name]["columns"]:
+        table_data[table_name]["columns"] = cols
 
-for block in dml_blocks:
-    # Each block may have multiple INSERT statements
-    inserts = re.findall(
-        r"INSERT INTO (\w+)\s*\(([^)]+)\)\s*VALUES\s*(.*?);",
-        block, re.DOTALL
-    )
-    for table_name, columns_str, values_str in inserts:
-        if table_name not in table_data:
-            table_data[table_name] = {"columns": [], "rows": []}
+    if body.upper().startswith("VALUES"):
+        # Literal tuple INSERT  —  e.g. INSERT ... VALUES ('a', 1), ('b', 2);
+        # Strip the VALUES keyword
+        values_text = body[6:].strip().rstrip(';')
 
-        cols = [c.strip().strip('"') for c in columns_str.split(',')]
-        if not table_data[table_name]["columns"]:
-            table_data[table_name]["columns"] = cols
-
-        # Parse value tuples
-        # Handle multi-line tuples: ('val1', val2), ('val3', val4);
-        # Also handle subquery-based VALUES like SELECT m.id, ...
-        if values_str.strip().upper().startswith("SELECT"):
-            # Subquery pattern — note as dynamic
-            table_data[table_name].setdefault("dynamic_rows", []).append(values_str.strip())
-        else:
-            # Tuple pattern
-            tuples = []
-            depth = 0
-            current = ""
-            for ch in values_str:
-                if ch == '(':
-                    if depth == 0:
-                        current = ""
-                    depth += 1
+        # Parse top-level tuples, respecting nesting depth
+        tuples = []
+        depth = 0
+        current = ""
+        for ch in values_text:
+            if ch == '(':
+                if depth == 0:
+                    current = "("
+                else:
+                    current += ch
+                depth += 1
+            elif ch == ')':
+                current += ch
+                depth -= 1
+                if depth == 0:
+                    tuples.append(current.strip())
+            else:
                 if depth > 0:
                     current += ch
-                if ch == ')':
-                    depth -= 1
-                    if depth == 0 and current:
-                        tuples.append(current.strip())
-            for tup in tuples:
-                # Simple CSV parse
-                vals = []
-                for v in tup.strip('()').split(','):
-                    v = v.strip()
-                    vals.append(v)
-                table_data[table_name]["rows"].append(vals)
 
-# Write JSON exports
+        for tup in tuples:
+            # Parse individual values inside the tuple, respecting quoted strings
+            vals = []
+            buf = ""
+            in_string = False
+            str_char = None
+            for ch in tup.strip("()"):
+                if in_string:
+                    buf += ch
+                    if ch == str_char and (len(buf) < 2 or buf[-2] != '\\'):
+                        # end of string
+                        str_char = None
+                        in_string = False
+                    continue
+                if ch in ("'", '"'):
+                    in_string = True
+                    str_char = ch
+                    buf += ch
+                    continue
+                if ch == ',':
+                    vals.append(buf.strip())
+                    buf = ""
+                    continue
+                buf += ch
+            if buf.strip():
+                vals.append(buf.strip())
+            table_data[table_name]["literal_rows"].append(vals)
+
+    elif body.upper().startswith("SELECT"):
+        # Subquery-based INSERT — document the raw SQL
+        table_data[table_name]["subquery_blocks"].append(body.rstrip(';').strip())
+
+# ── Write JSON exports ──────────────────────────────────────────
+total_literal = 0
+total_dynamic = 0
+
 for table_name, data in table_data.items():
-    filepath = os.path.join(EXPORT_DIR, f"{table_name}.json")
     rows_json = []
-
-    for row_vals in data.get("rows", []):
+    for row_vals in data["literal_rows"]:
         obj = {}
         for i, col in enumerate(data["columns"]):
             val = row_vals[i] if i < len(row_vals) else None
-            # Clean SQL literals
             if val is not None:
                 val = val.strip()
                 if val.upper() in ('NULL', ''):
                     val = None
                 elif val.startswith("'") and val.endswith("'"):
                     val = val[1:-1]
+                elif val.startswith('"') and val.endswith('"'):
+                    val = val[1:-1]
                 elif val.upper() == 'TRUE':
                     val = True
                 elif val.upper() == 'FALSE':
                     val = False
                 else:
-                    # Try number
                     try:
                         if '.' in val:
                             val = float(val)
@@ -143,32 +141,48 @@ for table_name, data in table_data.items():
             obj[col] = val
         rows_json.append(obj)
 
+    total_literal += len(rows_json)
+    total_dynamic += len(data["subquery_blocks"])
+
     entry = {
         "table": table_name,
-        "export_date": "2026-05-09",
+        "export_date": "2026-05-10",
         "columns": data["columns"],
         "row_count": len(rows_json),
-        "dynamic_count": len(data.get("dynamic_rows", [])),
-        "rows": rows_json
+        "dynamic_insert_count": len(data["subquery_blocks"]),
+        "rows": rows_json,
     }
 
+    if data["subquery_blocks"]:
+        entry["generator_notes"] = (
+            "Some INSERT statements use subqueries for FK resolution "
+            "(e.g., SELECT m.id FROM models m WHERE slug = '...'). "
+            "Run seed.sql in PostgreSQL to materialize. The raw SQL is "
+            "included below for reference."
+        )
+        # Keep the raw SQL inline so downstream tooling can re-materialise
+        entry["subquery_inserts"] = data["subquery_blocks"]
+
+    filepath = os.path.join(EXPORT_DIR, f"{table_name}.json")
     with open(filepath, 'w') as f:
         json.dump(entry, f, indent=2, default=str)
-    print(f"  export/{table_name}.json — {len(rows_json)} rows parsed + {len(data.get('dynamic_rows', []))} dynamic blocks")
+    print(f"  export/{table_name}.json — {len(rows_json)} literal rows"
+          f"{' + ' + str(len(data['subquery_blocks'])) + ' dynamic' if data['subquery_blocks'] else ''}")
 
-# Manifest
+# ── Manifest ────────────────────────────────────────────────────
 manifest = {
     "project": "deerflow-modeldb",
     "description": "Comprehensive AI Provider / Model / Plan / Pricing Database for Hermes Modeler",
-    "generated": "2026-05-09",
+    "generated": "2026-05-10",
     "task_hash": "001-deerflow-modeldb",
     "tables": list(table_data.keys()),
-    "total_rows": sum(len(v["rows"]) + len(v.get("dynamic_rows", [])) for v in table_data.values()),
+    "total_literal_rows": total_literal,
+    "total_dynamic_inserts": total_dynamic,
     "files": {
         "schema_sql": "schema.sql",
         "seed_sql": "seed.sql",
         "synthesis": "FINAL-SYNTHESIS.md",
-    }
+    },
 }
 
 with open(os.path.join(EXPORT_DIR, "manifest.json"), 'w') as f:
@@ -176,3 +190,4 @@ with open(os.path.join(EXPORT_DIR, "manifest.json"), 'w') as f:
 
 print(f"\nManifest: export/manifest.json")
 print(f"Done — {list(table_data.keys())}")
+print(f"Literal rows: {total_literal}, Dynamic inserts: {total_dynamic}")

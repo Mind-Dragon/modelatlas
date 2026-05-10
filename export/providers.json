@@ -1,6 +1,6 @@
 {
   "table": "providers",
-  "export_date": "2026-05-09",
+  "export_date": "2026-05-10",
   "columns": [
     "id",
     "slug",
@@ -13,18 +13,18 @@
     "status"
   ],
   "row_count": 25,
-  "dynamic_count": 0,
+  "dynamic_insert_count": 0,
   "rows": [
     {
       "id": "openai",
       "slug": "openai",
       "name": "OpenAI",
       "website": "https://openai.com",
-      "description": "'US AI research and deployment company \u2014 GPT",
-      "category": "o-series",
-      "region": "DALL-E",
-      "auth_type": "Whisper'",
-      "status": "us_ai_lab"
+      "description": "US AI research and deployment company \u2014 GPT, o-series, DALL-E, Whisper",
+      "category": "us_ai_lab",
+      "region": "us",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "anthropic",
@@ -64,11 +64,11 @@
       "slug": "deepseek",
       "name": "DeepSeek",
       "website": "https://deepseek.com",
-      "description": "'Chinese AI lab \u2014 V4 Flash/Pro",
-      "category": "R1'",
-      "region": "chinese_ai_lab",
-      "auth_type": "cn",
-      "status": "api_key"
+      "description": "Chinese AI lab \u2014 V4 Flash/Pro, R1",
+      "category": "chinese_ai_lab",
+      "region": "cn",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "alibaba",
@@ -130,11 +130,11 @@
       "slug": "mistral",
       "name": "Mistral AI",
       "website": "https://mistral.ai",
-      "description": "'French AI company \u2014 Mistral",
-      "category": "Codestral",
-      "region": "Pixtral'",
-      "auth_type": "eu_ai_lab",
-      "status": "eu"
+      "description": "French AI company \u2014 Mistral, Codestral, Pixtral",
+      "category": "eu_ai_lab",
+      "region": "eu",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "openrouter",
@@ -163,11 +163,11 @@
       "slug": "fireworks",
       "name": "Fireworks AI",
       "website": "https://fireworks.ai",
-      "description": "'Fast inference platform \u2014 FlashAttention",
-      "category": "quantization'",
-      "region": "api_aggregator",
-      "auth_type": "multi",
-      "status": "api_key"
+      "description": "Fast inference platform \u2014 FlashAttention, quantization",
+      "category": "api_aggregator",
+      "region": "multi",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "groq",
@@ -185,22 +185,22 @@
       "slug": "cohere",
       "name": "Cohere",
       "website": "https://cohere.com",
-      "description": "'Enterprise AI \u2014 Command models",
-      "category": "embeddings'",
-      "region": "us_ai_lab",
-      "auth_type": "us",
-      "status": "api_key"
+      "description": "Enterprise AI \u2014 Command models, embeddings",
+      "category": "us_ai_lab",
+      "region": "us",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "ai21",
       "slug": "ai21",
       "name": "AI21 Labs",
       "website": "https://studio.ai21.com",
-      "description": "'AI21 Labs \u2014 Jamba",
-      "category": "Jurassic models'",
-      "region": "us_ai_lab",
-      "auth_type": "us",
-      "status": "api_key"
+      "description": "AI21 Labs \u2014 Jamba, Jurassic models",
+      "category": "us_ai_lab",
+      "region": "us",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "perplexity",
@@ -229,11 +229,11 @@
       "slug": "azure",
       "name": "Microsoft Azure",
       "website": "https://azure.microsoft.com",
-      "description": "'Azure OpenAI Service \u2014 GPT",
-      "category": "o-series via Microsoft'",
-      "region": "cloud_platform",
-      "auth_type": "multi",
-      "status": "api_key"
+      "description": "Azure OpenAI Service \u2014 GPT, o-series via Microsoft",
+      "category": "cloud_platform",
+      "region": "multi",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "aws",
@@ -251,33 +251,33 @@
       "slug": "huggingface",
       "name": "Hugging Face",
       "website": "https://huggingface.co",
-      "description": "'ML community platform \u2014 inference endpoints",
-      "category": "model hub'",
-      "region": "api_aggregator",
-      "auth_type": "multi",
-      "status": "api_key"
+      "description": "ML community platform \u2014 inference endpoints, model hub",
+      "category": "api_aggregator",
+      "region": "multi",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "reka",
       "slug": "reka",
       "name": "Reka AI",
       "website": "https://reka.ai",
-      "description": "'Multimodal AI \u2014 Core",
-      "category": "Flash",
-      "region": "Spark",
-      "auth_type": "Edge models'",
-      "status": "us_ai_lab"
+      "description": "Multimodal AI \u2014 Core, Flash, Spark, Edge models",
+      "category": "us_ai_lab",
+      "region": "us",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "yi",
       "slug": "yi",
       "name": "01.AI",
       "website": "https://01.ai",
-      "description": "'Kai-Fu Lees company \u2014 Yi-Lightning",
-      "category": "Yi-Large'",
-      "region": "chinese_ai_lab",
-      "auth_type": "cn",
-      "status": "api_key"
+      "description": "Kai-Fu Lees company \u2014 Yi-Lightning, Yi-Large",
+      "category": "chinese_ai_lab",
+      "region": "cn",
+      "auth_type": "api_key",
+      "status": "active"
     },
     {
       "id": "baichuan",

@@ -1,0 +1,3 @@
+Research remaining providers: Cohere (Command), AI21 (Jamba), Perplexity (Sonar), Hugging Face Inference, Reka, Meta (Llama), Microsoft Azure, Amazon Bedrock. Document pricing, plans, endpoints.
+
+Output: DOMAIN7-OTHERS.md

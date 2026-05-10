@@ -1,6 +1,3 @@
-# DeerFlow research pipeline — reproducible but not needed for the database itself
-.swarm/
-
 # Python
 __pycache__/
 *.pyc

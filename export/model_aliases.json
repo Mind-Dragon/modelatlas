@@ -1,6 +1,6 @@
 {
   "table": "model_aliases",
-  "export_date": "2026-05-09",
+  "export_date": "2026-05-10",
   "columns": [
     "model_id",
     "alias",
@@ -8,7 +8,7 @@
     "is_current"
   ],
   "row_count": 11,
-  "dynamic_count": 0,
+  "dynamic_insert_count": 0,
   "rows": [
     {
       "model_id": "SELECT id FROM models WHERE provider_id='openai' AND slug='gpt-4o')",

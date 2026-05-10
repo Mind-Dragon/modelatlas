@@ -1,6 +1,6 @@
 {
   "table": "endpoints",
-  "export_date": "2026-05-09",
+  "export_date": "2026-05-10",
   "columns": [
     "provider_id",
     "slug",
@@ -15,7 +15,7 @@
     "region"
   ],
   "row_count": 29,
-  "dynamic_count": 0,
+  "dynamic_insert_count": 0,
   "rows": [
     {
       "provider_id": "openai",

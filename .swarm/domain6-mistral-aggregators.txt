@@ -1,0 +1,3 @@
+Research Mistral AI model family and API aggregators: OpenRouter, Together AI, Fireworks AI, Groq. Document pricing per model, plans, API endpoints, and rate limits.
+
+Output: DOMAIN6-MISTRAL-AGGREGATORS.md

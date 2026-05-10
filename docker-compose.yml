@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: modelatlas
+      POSTGRES_USER: modelatlas
+      POSTGRES_PASSWORD: modelatlas
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U modelatlas -d modelatlas"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  init:
+    image: postgres:16-alpine
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGPASSWORD: modelatlas
+    volumes:
+      - ./schema.sql:/schema.sql
+      - ./seed.sql:/seed.sql
+    command: >
+      sh -c "
+        echo 'Loading schema...' &&
+        psql -h postgres -U modelatlas -d modelatlas -f /schema.sql &&
+        echo 'Loading seed data...' &&
+        psql -h postgres -U modelatlas -d modelatlas -f /seed.sql &&
+        echo 'Verifying...' &&
+        psql -h postgres -U modelatlas -d modelatlas -c 'SELECT COUNT(*) AS providers FROM providers;' &&
+        psql -h postgres -U modelatlas -d modelatlas -c 'SELECT COUNT(*) AS models FROM models;' &&
+        psql -h postgres -U modelatlas -d modelatlas -c 'SELECT COUNT(*) AS plans FROM provider_plans;' &&
+        echo 'OK'
+      "
