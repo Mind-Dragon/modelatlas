@@ -1,0 +1,15 @@
+{
+  "table": "model_pricing",
+  "export_date": "2026-05-09",
+  "description": "DeerFlow ModelDB \u2014 model_pricing",
+  "row_count": 38,
+  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
+  "raw_inserts": [
+    "INSERT INTO model_pricing (model_id, endpoint_type, region, price_per_1m_input_tokens, price_per_1m_output_tokens, price_per_1m_cached_input_tokens, price_per_1m_input_tokens_batch, price_per_1m_output_tokens_batch, effective_date)",
+    "INSERT INTO model_pricing (model_id, endpoint_type, region, price_per_1m_input_tokens, price_per_1m_output_tokens, price_per_1m_cached_input_tokens, price_per_1m_input_tokens_batch, price_per_1m_output_tokens_batch, effective_date)",
+    "INSERT INTO model_pricing (model_id, endpoint_type, region, price_per_1m_input_tokens, price_per_1m_output_tokens, price_per_1m_cached_input_tokens, price_per_1m_input_tokens_batch, price_per_1m_output_tokens_batch, effective_date)",
+    "INSERT INTO model_pricing (model_id, endpoint_type, region, price_per_1m_input_tokens, price_per_1m_output_tokens, price_per_1m_cached_input_tokens, price_per_1m_input_tokens_batch, price_per_1m_output_tokens_batch, effective_date)",
+    "INSERT INTO model_pricing (model_id, endpoint_type, region, price_per_1m_input_tokens, price_per_1m_output_tokens, price_per_1m_cached_input_tokens, price_per_1m_input_tokens_batch, price_per_1m_output_tokens_batch, effective_date)"
+  ],
+  "total_inserts": 38
+}

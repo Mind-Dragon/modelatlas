@@ -1,0 +1,15 @@
+{
+  "table": "provider_plans",
+  "export_date": "2026-05-09",
+  "description": "DeerFlow ModelDB \u2014 provider_plans",
+  "row_count": 16,
+  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
+  "raw_inserts": [
+    "INSERT INTO provider_plans (provider_id, slug, name, tier, billing_model, monthly_price_usd, description, supports_batch_api) VALUES",
+    "INSERT INTO provider_plans (provider_id, slug, name, tier, billing_model, monthly_price_usd, description, supports_batch_api) VALUES",
+    "INSERT INTO provider_plans (provider_id, slug, name, tier, billing_model, monthly_price_usd, description, supports_batch_api) VALUES",
+    "INSERT INTO provider_plans (provider_id, slug, name, tier, billing_model, monthly_price_usd, description, supports_batch_api) VALUES",
+    "INSERT INTO provider_plans (provider_id, slug, name, tier, billing_model, monthly_price_usd, description, supports_batch_api) VALUES"
+  ],
+  "total_inserts": 16
+}

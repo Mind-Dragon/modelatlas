@@ -1,0 +1,15 @@
+{
+  "table": "model_capabilities",
+  "export_date": "2026-05-09",
+  "description": "DeerFlow ModelDB \u2014 model_capabilities",
+  "row_count": 29,
+  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
+  "raw_inserts": [
+    "INSERT INTO model_capabilities (model_id, capability, supported, max_images_per_request, notes)",
+    "INSERT INTO model_capabilities (model_id, capability, supported, max_images_per_request, notes)",
+    "INSERT INTO model_capabilities (model_id, capability, supported, notes)",
+    "INSERT INTO model_capabilities (model_id, capability, supported, notes)",
+    "INSERT INTO model_capabilities (model_id, capability, supported, notes)"
+  ],
+  "total_inserts": 29
+}

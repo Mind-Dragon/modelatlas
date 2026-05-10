@@ -1,0 +1,35 @@
+Task hash 001-deerflow-modeldb. Research domain 6: MISTRAL + API AGGREGATORS (OpenRouter, Together AI, Fireworks, Groq).
+
+Produce structured markdown at /home/work/hermesfixes/deerflow-modeldb/DOMAIN6-MISTRAL-AGGREGATORS.md
+
+MISTRAL:
+1. Mistral plans: Le Chat (free/pro/team/enterprise), API pay-as-you-go, La Plateforme
+2. Models: Mistral Large (2411, 2501), Mistral Small, Pixtral Large, Mistral Nemo, Codestral, Mistral Embed
+3. Context windows, max output, capabilities (vision, code, multilingual)
+4. Pricing per model, rate limits
+5. API endpoint: api.mistral.ai
+6. Le Chat bundled plans pricing
+
+OPENROUTER:
+1. Model routing, markup pricing, credit system
+2. Available models (aggregates many providers)
+3. Pricing: provider cost + OpenRouter margin
+4. Rate limits per model, concurrency
+5. API endpoint: openrouter.ai/api
+
+TOGETHER AI:
+1. Available models (Llama, DeepSeek, Qwen, Mixtral, etc.), including open-source serving
+2. Pricing per model
+3. API endpoint, rate limits, throughput
+
+FIREWORKS AI:
+1. Available models (Llama, DeepSeek, Qwen, Mistral variants), including finetuned
+2. Pricing (very competitive, per-token), rate limits
+3. Fireworks fast inference optimizations
+
+GROQ:
+1. Available models (Llama, Gemma, Mixtral), Mixture of Experts
+2. Ultra-fast inference pricing
+3. Rate limits, endpoint, free tier
+
+Format as structured tables. USD pricing.

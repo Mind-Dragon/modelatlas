@@ -1,0 +1,11 @@
+{
+  "table": "model_endpoint_map",
+  "export_date": "2026-05-09",
+  "description": "DeerFlow ModelDB \u2014 model_endpoint_map",
+  "row_count": 1,
+  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
+  "raw_inserts": [
+    "INSERT INTO model_endpoint_map (model_id, endpoint_id, is_default, routing_weight)"
+  ],
+  "total_inserts": 1
+}

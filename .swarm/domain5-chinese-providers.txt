@@ -1,0 +1,32 @@
+Task hash 001-deerflow-modeldb. Research domain 5: CHINESE PROVIDERS (Bailian/Qwen, Zhipu/GLM, Minimax, Kimi/Moonshot, ByteDance/Doubao).
+
+Produce structured markdown at /home/work/hermesfixes/deerflow-modeldb/DOMAIN5-CHINESE-PROVIDERS.md
+
+ALIBABA/BAILIAN/QWEN:
+1. Bailian Token Plan (Team Edition) plans
+2. Qwen models: Qwen3-Plus, Qwen3-Max, Qwen3, Qwen2.5 series (72B, 32B, 14B, 7B, 1.5B, Coder, Math), QwQ
+3. Context windows (up to 1M), max output
+4. Pricing: per 1M tokens, token plan pricing
+5. API endpoint: token-plan.ap-southeast-1.maas.aliyuncs.com, international vs Chinese endpoints
+6. Rate limits per tier
+
+ZHIPU/GLM:
+1. GLM models: GLM-5, GLM-4, GLM-4V, CodeGeeX
+2. Pricing, context windows, rate limits
+3. API: open.bigmodel.cn
+
+MINIMAX:
+1. MiniMax models: M2.7, M2.5, M1
+2. Pricing (very competitive), context windows
+3. API endpoint, rate limits
+
+MOONSHOT/KIMI:
+1. Kimi models, kimi chat vs API
+2. Pricing plans, context (up to 2M)
+3. API endpoint
+
+BYTEDANCE/DOUBAO:
+1. Doubao models, seed models
+2. Pricing, context windows
+
+Format as structured tables with USD pricing where possible, CNY also useful.

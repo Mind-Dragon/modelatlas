@@ -1,0 +1,16 @@
+Task hash 001-deerflow-modeldb. Research domain 3: GOOGLE (Gemini, Vertex AI).
+
+Produce structured markdown at /home/work/hermesfixes/deerflow-modeldb/DOMAIN3-GOOGLE.md
+
+Cover:
+1. Google AI Studio plans: Free, Pay-as-you-go, Vertex AI plans
+2. ALL Gemini models: Gemini 2.5 Pro, Gemini 2.5 Flash (incl. Thinking), Gemini 2.0 Flash, Gemini 2.0 Flash-Lite, Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini 1.5 Flash-8B
+3. Context windows (1M, 2M), max output tokens, training cutoff
+4. Modalities: text, image, video, audio, code execution, tool use, streaming, structured output, Grounding, search
+5. Pricing per model: input/1M tokens, output/1M tokens, image/video/audio pricing (per image, per second of video/audio)
+6. Cached content pricing, batch pricing
+7. Free tier rate limits, paid tier rate limits, quota system
+8. Regional endpoints: us-central1, europe-west4, asia-northeast1, etc.
+9. Gemini API vs Vertex AI differences
+
+Format as structured tables. USD pricing.

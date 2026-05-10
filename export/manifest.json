@@ -1,0 +1,17 @@
+{
+  "project": "deerflow-modeldb",
+  "description": "Comprehensive AI Provider / Model / Plan / Pricing Database for Hermes Modeler",
+  "generated": "2026-05-09",
+  "task_hash": "001-deerflow-modeldb",
+  "tables": [
+    "providers",
+    "endpoints",
+    "model_aliases"
+  ],
+  "total_rows": 65,
+  "files": {
+    "schema_sql": "schema.sql",
+    "seed_sql": "seed.sql",
+    "synthesis": "FINAL-SYNTHESIS.md"
+  }
+}

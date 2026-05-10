@@ -1,0 +1,15 @@
+{
+  "table": "models",
+  "export_date": "2026-05-09",
+  "description": "DeerFlow ModelDB \u2014 models",
+  "row_count": 8,
+  "generator_notes": "INSERT statements use subqueries for FK resolution (e.g., SELECT m.id FROM models m ...). Run seed.sql in PostgreSQL to materialize.",
+  "raw_inserts": [
+    "INSERT INTO models (provider_id, slug, display_name, model_family, version_label, context_window_tokens, max_output_tokens, max_batch_output_tokens, training_cutoff_date, status, released_date, deprecated_date, sunset_date, description) VALUES",
+    "INSERT INTO models (provider_id, slug, display_name, model_family, version_label, context_window_tokens, max_output_tokens, max_batch_output_tokens, training_cutoff_date, status, released_date, deprecated_date, sunset_date, description) VALUES",
+    "INSERT INTO models (provider_id, slug, display_name, model_family, version_label, context_window_tokens, max_output_tokens, max_batch_output_tokens, training_cutoff_date, status, released_date, deprecated_date, sunset_date, description) VALUES",
+    "INSERT INTO models (provider_id, slug, display_name, model_family, version_label, context_window_tokens, max_output_tokens, max_batch_output_tokens, training_cutoff_date, status, released_date, deprecated_date, sunset_date, description) VALUES",
+    "INSERT INTO models (provider_id, slug, display_name, model_family, version_label, context_window_tokens, max_output_tokens, max_batch_output_tokens, training_cutoff_date, status, released_date, deprecated_date, sunset_date, description) VALUES"
+  ],
+  "total_inserts": 8
+}

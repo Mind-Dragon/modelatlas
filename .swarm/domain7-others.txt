@@ -1,0 +1,29 @@
+Task hash 001-deerflow-modeldb. Research domain 7: OTHER PROVIDERS + MODELS DB / HUGGING FACE.
+
+Produce structured markdown at /home/work/hermesfixes/deerflow-modeldb/DOMAIN7-OTHERS.md
+
+COVER ALL:
+
+1. Cohere: Command R+ (07-2024, 08-2024), Command A, Embed models; API endpoint, pricing, context windows, rate limits. api.cohere.ai
+
+2. AI21 Labs: Jamba 1.5 Mini, Jamba 1.5 Large; pricing, context (256K), endpoint
+
+3. Perplexity: Sonar API, Perplexity models; plans (Free, Pro $20), API pricing, online/grounded generation
+
+4. Reka: Reka Core, Reka Flash, Reka Edge; multimodal
+
+5. Yi/01.AI: Yi-Lightning, Yi-Large, Yi-Spark; pricing, context windows
+
+6. Baichuan: Baichuan AI models, pricing
+
+7. Meta Llama (first-party): Meta no longer offers first-party Llama API; Llama models are served through AWS Bedrock, Together, Fireworks, Groq, etc. Note this.
+
+8. Amazon Bedrock: Model catalog, pricing (per-token, per-hour for provisioned), available models through Bedrock
+
+9. Microsoft Azure OpenAI: Regional deployment, model availability, pricing (same as OpenAI + Azure markup), reservations
+
+10. Hugging Face Inference: Inference API (free rate-limited), Inference Endpoints (paid), Serverless Inference; available models, pricing, rate limits
+
+11. MODELS DB: Search for modelsdb.app, models.ai, or similar model databases — they catalog provider/model/pricing. Extract any useful structured data patterns.
+
+Format as structured tables. USD pricing.
