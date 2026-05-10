@@ -74,8 +74,14 @@ psql -d modelatlas -c "SELECT id, name, category, region FROM providers ORDER BY
 psql -d modelatlas -c "SELECT slug, context_window_tokens, status FROM models WHERE provider_id = 'openai' ORDER BY slug;"
 psql -d modelatlas -c "SELECT p.name, pl.slug, pl.tier, pl.monthly_price_usd FROM provider_plans pl JOIN providers p ON p.id = pl.provider_id WHERE pl.tier = 'free' ORDER BY p.name;"
 
-# Regenerate JSON exports
+# Regenerate JSON exports (standalone, no PostgreSQL needed)
 python3 generate-exports.py
+
+# Regenerate with PostgreSQL verification (deterministic JSON via SQL queries)
+python3 generate-exports.py --database-url postgresql://user:pass@localhost:5432/modelatlas
+
+# Full release verification (PG-backed exports + integrity + secret scan)
+python3 generate-exports.py --verify --database-url postgresql://user:pass@localhost:5432/modelatlas
 ```
 
 ## Data Dimensions
@@ -114,17 +120,30 @@ python3 generate-exports.py
 
 ## JSON Exports
 
-Per-table JSON exports are available in the `export/` directory. Generated from
-`seed.sql` — supports both literal tuple INSERTs (parsed into JSON rows) and
-subquery-based INSERTs (documented as raw SQL for FK-dependent tables).
+Two modes for generating JSON exports:
+
+**Standalone** (default, no dependencies): regex-parses INSERT statements from
+`seed.sql`. Handles literal tuples (parsed into JSON rows) and subquery-based
+INSERTs (documented as raw SQL for FK-dependent tables).
+
+**PG-backed** (`--database-url`): loads schema+seed into PostgreSQL, then
+exports deterministic JSON via SQL queries with proper collation ordering,
+timestamp normalization, and surrogate ID reordering. Produces cleaner JSON
+with resolved foreign key references.
 
 ```bash
-# Regenerate exports from seed.sql
+# Standalone (no PostgreSQL needed)
 python3 generate-exports.py
+
+# PG-backed (deterministic JSON)
+python3 generate-exports.py --database-url postgresql://...
+
+# Full release verification
+python3 generate-exports.py --verify --database-url postgresql://...
 ```
 
-| Table | Literal rows | Dynamic inserts |
-|-------|:-----------:|:---------------:|
+| Table | Standalone rows | Dynamic inserts |
+|-------|:--------------:|:---------------:|
 | providers | 25 | -- |
 | endpoints | 29 | -- |
 | provider_plans | 115 | -- |
@@ -159,7 +178,9 @@ python3 generate-exports.py
 modelatlas/
 ├── schema.sql                    # PostgreSQL DDL (8 tables, enums, indexes)
 ├── seed.sql                      # Full seed data INSERTs (723 lines, wrapped in txn)
-├── generate-exports.py           # JSON export generator from seed.sql
+├── generate-exports.py           # JSON export generator (standalone + PG modes)
+├── scripts/
+│   └── verify-release.py         # Release verification: SQL split, row counts, secret scan
 ├── docker-compose.yml            # One-command Postgres test environment
 ├── FINAL-SYNTHESIS.md            # Complete reference (96KB, 1345 lines)
 ├── README.md                     # This file

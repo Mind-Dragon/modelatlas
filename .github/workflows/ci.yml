@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  validate-sql:
+  verify:
     runs-on: ubuntu-latest
     services:
       postgres:
@@ -17,7 +17,7 @@ jobs:
           POSTGRES_USER: modelatlas
           POSTGRES_PASSWORD: modelatlas
         options: >-
-          --health-cmd pg_isready -U modelatlas -d modelatlas
+          --health-cmd "pg_isready -U modelatlas -d modelatlas"
           --health-interval 5s
           --health-timeout 3s
           --health-retries 5
@@ -26,6 +26,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
       - name: Load schema
         run: PGPASSWORD=modelatlas psql -h localhost -U modelatlas -d modelatlas -f schema.sql
@@ -50,29 +60,22 @@ jobs:
           echo "=== Active models by provider ==="
           psql -h localhost -U modelatlas -d modelatlas -c "SELECT provider_id, COUNT(*) FROM models WHERE status = 'active' GROUP BY provider_id ORDER BY provider_id;"
 
-  validate-exports:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
+      - name: PG-backed deterministic exports + release verification
+        env:
+          MODELATLAS_DATABASE_URL: postgresql://modelatlas:modelatlas@localhost:5432/modelatlas
+        run: python3 generate-exports.py --verify
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Regenerate exports
-        run: python3 generate-exports.py
-
-      - name: Verify export files
+      - name: Check deterministic regeneration
         run: |
-          for f in export/manifest.json export/providers.json export/endpoints.json \
-                   export/provider_plans.json export/models.json \
-                   export/model_capabilities.json export/model_pricing.json \
-                   export/model_aliases.json export/model_endpoint_map.json; do
-            if [ ! -s "$f" ]; then
-              echo "ERROR: $f is missing or empty"
-              exit 1
-            fi
-            rows=$(python3 -c "import json; print(json.load(open('$f')).get('row_count', 0))")
-            echo "$f -- $rows literal rows"
-          done
+          python3 generate-exports.py
+          python3 scripts/verify-release.py --database-url "$MODELATLAS_DATABASE_URL"
+        env:
+          MODELATLAS_DATABASE_URL: postgresql://modelatlas:modelatlas@localhost:5432/modelatlas
+
+      - name: Ensure exports are committed
+        run: |
+          git diff --exit-code -- export/ schema.sql seed.sql
+          if [ $? -ne 0 ]; then
+            echo "ERROR: export/, schema.sql, or seed.sql differ from committed versions"
+            exit 1
+          fi
