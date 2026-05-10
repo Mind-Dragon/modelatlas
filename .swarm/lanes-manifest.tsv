@@ -1,8 +1,0 @@
-
-DOMAIN1-OPENAI|2863061|openai-codex|gpt-5.4-mini|spawned|1778382230
-DOMAIN2-ANTHROPIC|2863065|opencode|claude-haiku-4-5|spawned|1778382230
-DOMAIN3-GOOGLE|2863069|opencode|gemini-3-flash|spawned|1778382230
-DOMAIN4-XAI-DEEPSEEK|2863073|crof.ai|deepseek-v4-flash|spawned|1778382230
-DOMAIN5-CHINESE-PROVIDERS|2863077|crof.ai|qwen3.6-27b|spawned|1778382230
-DOMAIN6-MISTRAL-AGGREGATORS|2863081|opencode|big-pickle|spawned|1778382230
-DOMAIN7-OTHERS|2863085|opencode|hy3-preview-free|spawned|1778382230
