@@ -1,0 +1,27 @@
+id: modelatlas
+name: ModelAtlas
+path: /home/work/modelatlas
+role: ai-provider-database
+kind: python
+phase: foundation
+active_wave: P1
+docs:
+  guideline: GUIDELINE.md
+  architecture: ARCHITECTURE.md
+  plans: PLANS.md
+  todo: TODO.md
+  autonomous: AUTONOMOUS.md
+verification:
+  - python3 -m py_compile scripts/scout.py
+  - python3 -m py_compile scripts/gap-monitor.py
+  - python3 -m py_compile scripts/verify-release.py
+  - python3 generate-exports.py
+  - python3 scripts/verify-release.py --database-url "$MODELATLAS_DATABASE_URL"
+mutation_policy:
+  github: false
+  remote_push: false
+  live_deploy: false
+lanes:
+  implementation: deepseek-v4-pro
+  audit: deepseek-v4-flash
+  verification: controller
